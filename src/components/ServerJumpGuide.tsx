@@ -102,38 +102,35 @@ ${generatedTag}
   return (
     <div id="server-jump-guide-container" className="space-y-6">
       {/* Officer Hero Banner */}
-      <div className="rounded-3xl bg-gradient-to-br from-indigo-950 via-slate-900 to-amber-950 text-white p-6 sm:p-8 border border-amber-500/40 shadow-xl relative overflow-hidden">
-        <div className="absolute -right-12 -bottom-12 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -left-12 -top-12 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-3xl">
+      <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-2xs relative overflow-hidden">
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
+          <div className="space-y-2 max-w-3xl">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/25 border border-amber-400/50 text-amber-300 text-xs font-mono font-extrabold uppercase tracking-wider">
-                <Crown className="w-3.5 h-3.5 text-amber-400" />
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider">
+                <Crown className="w-3.5 h-3.5 text-amber-600" />
                 ТОЛЬКО ДЛЯ РУКОВОДСТВА (R4 / R5)
               </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/40 text-indigo-300 text-xs font-mono font-bold">
-                <Send className="w-3 h-3 text-indigo-300" />
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs font-semibold">
+                <Send className="w-3 h-3 text-indigo-600" />
                 УВЕДОМЛЕНИЯ АЛЬЯНСА
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white flex items-center gap-2.5 flex-wrap">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-2.5 flex-wrap">
               <span>🌍 Как перейти на любой сервер</span>
-              <span className="text-amber-400 font-mono text-xl sm:text-2xl font-bold bg-amber-950/60 px-2.5 py-0.5 rounded-lg border border-amber-500/30">
+              <span className="text-amber-800 font-mono text-sm sm:text-base font-bold bg-amber-50 px-2.5 py-0.5 rounded-lg border border-amber-200">
                 Скрытая механика
               </span>
             </h1>
 
-            <p className="text-sm text-slate-300 leading-relaxed">
-              Секретная конструкция ссылок для офицеров R4 и лидера R5. Позволяет создавать интерактивные кликабельные кнопки прямо в <strong>Уведомлении Альянса</strong>, чтобы участники клана могли в один клик перенести карту на любой выбранный сервер и заданные координаты.
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Секретная конструкция ссылок для офицеров R4 и лидера R5. Позволяет создавать интерактивные кликабельные кнопки прямо в <strong className="text-slate-900">Уведомлении Альянса</strong>, чтобы участники клана могли в один клик перенести карту на любой выбранный сервер и заданные координаты.
             </p>
           </div>
 
           <button
             onClick={handleCopyMemo}
-            className="flex-shrink-0 px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white text-xs font-extrabold transition-all shadow-lg flex items-center justify-center gap-2.5 border border-amber-300/40 cursor-pointer hover:scale-[1.02]"
+            className="flex-shrink-0 px-3.5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-2xs flex items-center justify-center gap-2 border border-amber-600 cursor-pointer"
           >
             {copiedFullMemo ? (
               <>
@@ -276,30 +273,30 @@ ${generatedTag}
         </div>
 
         {/* Live Generated Box */}
-        <div className="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800 text-white space-y-3">
-          <div className="flex items-center justify-between gap-3">
+        <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 space-y-3">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
             <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider">
                 ГОТОВАЯ СТРОКА ДЛЯ ВСТАВКИ В УВЕДОМЛЕНИЕ АЛЬЯНСА
               </span>
             </div>
             <button
               onClick={handleCopyTag}
-              className="px-4 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs transition-all flex items-center gap-1.5 cursor-pointer shadow-md"
+              className="px-3.5 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs"
             >
               {copiedLink ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copiedLink ? "Скопировано!" : "Скопировать тег"}</span>
             </button>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-black/60 border border-white/10 font-mono text-sm sm:text-base text-amber-300 break-all select-all">
+          <div className="p-3.5 rounded-xl bg-white border border-amber-300 font-mono text-sm sm:text-base text-amber-900 font-bold break-all select-all shadow-2xs">
             {generatedTag}
           </div>
 
-          <div className="flex items-center gap-2 text-xs text-slate-400 pt-1">
-            <Info className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-            <span>В игре в поле уведомления будет виден только текст: <strong className="text-white">«{cleanText}»</strong>, при нажатии на который откроется сервер <strong>{cleanServer}</strong> на координатах <strong>{cleanX}:{cleanY}</strong>.</span>
+          <div className="flex items-center gap-2 text-xs text-slate-600 pt-1">
+            <Info className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
+            <span>В игре в поле уведомления будет виден только текст: <strong className="text-slate-900">«{cleanText}»</strong>, при нажатии на который откроется сервер <strong>{cleanServer}</strong> на координатах <strong>{cleanX}:{cleanY}</strong>.</span>
           </div>
         </div>
       </div>
@@ -398,7 +395,7 @@ ${generatedTag}
               <div>
                 <strong className="text-slate-900">Разведка перед субботней войной:</strong>
                 <p className="text-slate-600 text-xs mt-0.5">
-                  Быстрый переход на сервер оппонента по Дуэли для изучения расположения вражеских баз, ульев и цитаделей.
+                  Быстрый переход на сервер соперника по Дуэли для изучения расположения вражеских баз, территорий альянсов и цитаделей.
                 </p>
               </div>
             </div>

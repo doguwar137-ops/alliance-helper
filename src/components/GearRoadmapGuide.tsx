@@ -289,10 +289,10 @@ export const GearRoadmapGuide: React.FC = () => {
         // Highlight numbers like 40, 20
         const parts = target.split(/(40|20)/g);
         return (
-          <span className="text-slate-200 font-bold text-xs sm:text-sm whitespace-nowrap">
+          <span className="text-slate-600 font-bold text-xs sm:text-sm whitespace-nowrap">
             {parts.map((part, i) =>
               part === "40" || part === "20" ? (
-                <span key={i} className="text-[#fcd34d] font-extrabold text-sm sm:text-base ml-0.5">
+                <span key={i} className="text-amber-700 font-extrabold text-sm sm:text-base ml-0.5">
                   {part}
                 </span>
               ) : (
@@ -307,17 +307,17 @@ export const GearRoadmapGuide: React.FC = () => {
       const beforeStar = target.replace("★", "");
       const parts = beforeStar.split(/(\d+)/g);
       return (
-        <span className="inline-flex items-center gap-0.5 text-slate-200 font-bold text-xs sm:text-sm whitespace-nowrap">
+        <span className="inline-flex items-center gap-0.5 text-slate-600 font-bold text-xs sm:text-sm whitespace-nowrap">
           {parts.map((part, i) =>
             /^\d+$/.test(part) ? (
-              <span key={i} className="text-white font-extrabold text-sm sm:text-base ml-0.5">
+              <span key={i} className="text-slate-900 font-extrabold text-sm sm:text-base ml-0.5">
                 {part}
               </span>
             ) : (
               part
             )
           )}
-          <span className="text-[#fbbf24] text-sm sm:text-base drop-shadow-[0_0_6px_rgba(251,191,36,0.6)]">
+          <span className="text-amber-500 text-sm sm:text-base">
             ★
           </span>
         </span>
@@ -333,27 +333,27 @@ export const GearRoadmapGuide: React.FC = () => {
           isDimmed ? "opacity-25 scale-[0.98]" : "opacity-100 hover:scale-[1.01]"
         }`}
       >
-        {/* Left Hexagonal Number Badge */}
+        {/* Left Number Badge */}
         <div
-          className={`w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center font-extrabold text-sm sm:text-base rounded-xl border-2 transition-colors shadow-md ${
+          className={`w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center font-extrabold text-sm sm:text-base rounded-xl border transition-colors shadow-2xs ${
             isDone
-              ? "bg-emerald-950/90 border-emerald-400 text-emerald-300"
+              ? "bg-emerald-100 border-emerald-400 text-emerald-800"
               : step.isSpecial
-                ? "bg-[#172554] border-[#60a5fa] text-white shadow-[0_0_12px_rgba(59,130,246,0.4)]"
-                : "bg-[#0f172a] border-[#475569] text-white group-hover:border-[#f59e0b]"
+                ? "bg-sky-600 border-sky-700 text-white"
+                : "bg-amber-50 border-amber-300 text-amber-900 group-hover:border-amber-500"
           }`}
         >
-          {isDone ? <Check className="w-5 h-5 text-emerald-400" /> : step.num}
+          {isDone ? <Check className="w-5 h-5 text-emerald-700" /> : step.num}
         </div>
 
-        {/* Main Golden-Bordered Pill */}
+        {/* Main Step Pill */}
         <div
-          className={`flex-1 flex items-center justify-between gap-2 px-2.5 sm:px-3.5 py-2 rounded-xl border transition-all min-h-[46px] ${
+          className={`flex-1 flex items-center justify-between gap-2 px-2.5 sm:px-3.5 py-2 rounded-xl border transition-all min-h-[46px] shadow-2xs ${
             isDone
-              ? "bg-emerald-950/40 border-emerald-500/50 text-emerald-200/80 line-through"
+              ? "bg-emerald-50/70 border-emerald-300 text-emerald-800/80 line-through"
               : step.isSpecial
-                ? "bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] border-[#60a5fa] shadow-[0_0_15px_rgba(59,130,246,0.25)]"
-                : "bg-gradient-to-r from-[#0c1424]/95 via-[#111c33]/95 to-[#0c1424]/95 border-[#d97706]/80 group-hover:border-[#fbbf24] shadow-[inset_0_0_12px_rgba(217,119,6,0.12)]"
+                ? "bg-sky-50 border-sky-300"
+                : "bg-white border-slate-200 group-hover:border-amber-400"
           }`}
         >
           {/* Left: Gear Icon + Hero Names */}
@@ -361,8 +361,8 @@ export const GearRoadmapGuide: React.FC = () => {
             <div
               className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 border ${
                 step.isSpecial
-                  ? "bg-[#1e3a8a]/80 border-[#60a5fa]"
-                  : "bg-[#1c1917] border-[#f59e0b]/80 shadow-[0_0_8px_rgba(245,158,11,0.25)]"
+                  ? "bg-sky-900 border-sky-600"
+                  : "bg-slate-900 border-amber-500/80"
               }`}
             >
               <GearSvgIcon type={step.gearType} />
@@ -372,14 +372,14 @@ export const GearRoadmapGuide: React.FC = () => {
               <div
                 className={`font-bold text-xs sm:text-sm leading-tight truncate ${
                   step.isSpecial
-                    ? "text-white tracking-wide uppercase font-extrabold"
-                    : "text-slate-100"
+                    ? "text-sky-950 tracking-wide uppercase font-extrabold"
+                    : "text-slate-900"
                 }`}
               >
                 {step.heroes}
               </div>
               {step.subnote && (
-                <div className="text-[10px] text-amber-300/80 leading-tight mt-0.5">
+                <div className="text-[10px] text-amber-700 font-medium leading-tight mt-0.5">
                   {step.subnote}
                 </div>
               )}
@@ -402,20 +402,21 @@ export const GearRoadmapGuide: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Top Action & Filter Bar */}
-      <div className="rounded-2xl bg-white border border-slate-200 p-4 sm:p-5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 shadow-2xs">
+      <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 shadow-2xs">
         <div>
-          <div className="flex items-center gap-2 mb-1">
-            <Sparkles className="w-5 h-5 text-amber-600" />
-            <h2 className="text-lg sm:text-xl font-extrabold text-slate-900">
-              Как правильно прокачивать снаряжение героям в Last Asylum: Plague
-            </h2>
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider mb-2">
+            <Sparkles className="w-4 h-4 text-amber-600" />
+            <span>Дорожная карта снаряжения</span>
           </div>
-          <p className="text-xs sm:text-sm text-slate-600">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            Как правильно прокачивать снаряжение героям
+          </h1>
+          <p className="text-sm text-slate-600 mt-1">
             Нажимайте на шаги в таблице ниже, чтобы отмечать свой личный прогресс прокачки снаряжения (сохраняется автоматически).
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 w-full lg:w-auto">
+        <div className="flex flex-wrap items-center gap-2.5 w-full lg:w-auto">
           {completedSteps.length > 0 && (
             <button
               onClick={resetProgress}
@@ -428,20 +429,20 @@ export const GearRoadmapGuide: React.FC = () => {
 
           <button
             onClick={handleCopyFull}
-            className={`flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
+            className={`flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs ${
               copiedFull
                 ? "bg-emerald-600 text-white border-emerald-600"
-                : "bg-amber-600 hover:bg-amber-500 text-white border-amber-600 shadow-2xs"
+                : "bg-amber-600 hover:bg-amber-700 text-white border-amber-600"
             }`}
           >
             {copiedFull ? (
               <>
-                <Check className="w-3.5 h-3.5" />
+                <Check className="w-4 h-4" />
                 <span>Скопировано!</span>
               </>
             ) : (
               <>
-                <Copy className="w-3.5 h-3.5" />
+                <Copy className="w-4 h-4" />
                 <span>Скопировать весь список (🏆)</span>
               </>
             )}
@@ -449,20 +450,20 @@ export const GearRoadmapGuide: React.FC = () => {
 
           <button
             onClick={handleCopyChat}
-            className={`flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
+            className={`flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs ${
               copiedChat
-                ? "bg-emerald-600 text-white border-emerald-600"
-                : "bg-slate-900 hover:bg-slate-800 text-white border-slate-900"
+                ? "bg-emerald-50 text-emerald-800 border-emerald-300"
+                : "bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-300"
             }`}
           >
             {copiedChat ? (
               <>
-                <Check className="w-3.5 h-3.5" />
+                <Check className="w-4 h-4 text-emerald-600" />
                 <span>Скопировано для чата!</span>
               </>
             ) : (
               <>
-                <Copy className="w-3.5 h-3.5" />
+                <Copy className="w-4 h-4 text-slate-500" />
                 <span>Кратко в чат альянса</span>
               </>
             )}
@@ -471,7 +472,7 @@ export const GearRoadmapGuide: React.FC = () => {
       </div>
 
       {/* Filter Pills */}
-      <div className="flex flex-wrap items-center justify-between gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-2xs">
+      <div className="flex flex-wrap items-center justify-between gap-3 bg-white border border-slate-200 rounded-2xl px-4 py-3.5 shadow-2xs">
         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           <span className="flex items-center gap-1.5 text-xs font-bold text-slate-500 mr-1">
             <Filter className="w-3.5 h-3.5" />
@@ -486,10 +487,10 @@ export const GearRoadmapGuide: React.FC = () => {
             <button
               key={f.id}
               onClick={() => setHeroFilter(f.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 heroFilter === f.id
                   ? "bg-amber-600 text-white shadow-2xs"
-                  : "bg-slate-100 hover:bg-slate-200 text-slate-700"
+                  : "bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200"
               }`}
             >
               {f.label}
@@ -497,32 +498,29 @@ export const GearRoadmapGuide: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-lg">
+        <div className="flex items-center gap-2 text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl">
           <CheckCircle2 className="w-4 h-4 text-emerald-600" />
           <span>Выполнено: {completedSteps.length} из 27</span>
         </div>
       </div>
 
-      {/* Main Dark Board Replicating the Official Infographic */}
-      <div className="rounded-3xl bg-gradient-to-b from-[#060d1a] via-[#091326] to-[#050b16] border-2 border-[#1e293b] p-4 sm:p-7 shadow-2xl text-white relative overflow-hidden">
-        {/* Decorative Corner Frame Lines */}
-        <div className="pointer-events-none absolute inset-2 border border-sky-500/20 rounded-2xl" />
-
+      {/* Main Board in Unified Light Card Style */}
+      <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-2xs relative overflow-hidden">
         {/* Header Title */}
-        <div className="text-center mb-6 sm:mb-8 relative z-10">
-          <h1 className="text-xl sm:text-3xl md:text-4xl font-black tracking-wider uppercase text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)]">
+        <div className="text-center mb-6 pb-4 border-b border-slate-200">
+          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight uppercase text-slate-900">
             ДОРОЖНАЯ КАРТА УЛУЧШЕНИЯ СНАРЯЖЕНИЯ
-          </h1>
-          <p className="text-sm sm:text-lg md:text-xl font-bold text-[#38bdf8] mt-1 tracking-wide">
+          </h2>
+          <p className="text-xs sm:text-sm font-bold text-amber-700 mt-1">
             Оптимальный порядок улучшений для ключевых героев
           </p>
         </div>
 
         {/* 3 Columns Grid: Steps 1-9, 10-18, 20-28 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6">
           {/* Column 1: 1-9 */}
-          <div className="space-y-2.5 bg-[#0b1528]/70 border border-slate-800/90 rounded-2xl p-3 sm:p-4">
-            <div className="flex items-center justify-between px-1 pb-1.5 border-b border-slate-800 text-[11px] font-mono uppercase tracking-wider text-amber-400/90">
+          <div className="space-y-2.5 bg-slate-50 border border-slate-200 rounded-2xl p-3.5 sm:p-4">
+            <div className="flex items-center justify-between px-1 pb-2 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-amber-800">
               <span>Этап I • Базовый старт</span>
               <span>Шаги 1 – 9</span>
             </div>
@@ -530,8 +528,8 @@ export const GearRoadmapGuide: React.FC = () => {
           </div>
 
           {/* Column 2: 10-18 */}
-          <div className="space-y-2.5 bg-[#0b1528]/70 border border-slate-800/90 rounded-2xl p-3 sm:p-4">
-            <div className="flex items-center justify-between px-1 pb-1.5 border-b border-slate-800 text-[11px] font-mono uppercase tracking-wider text-sky-400/90">
+          <div className="space-y-2.5 bg-slate-50 border border-slate-200 rounded-2xl p-3.5 sm:p-4">
+            <div className="flex items-center justify-between px-1 pb-2 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-sky-800">
               <span>Этап II • Средний рубеж и 1★</span>
               <span>Шаги 10 – 18</span>
             </div>
@@ -539,8 +537,8 @@ export const GearRoadmapGuide: React.FC = () => {
           </div>
 
           {/* Column 3: 20-28 */}
-          <div className="space-y-2.5 bg-[#0b1528]/70 border border-slate-800/90 rounded-2xl p-3 sm:p-4">
-            <div className="flex items-center justify-between px-1 pb-1.5 border-b border-slate-800 text-[11px] font-mono uppercase tracking-wider text-amber-400/90">
+          <div className="space-y-2.5 bg-slate-50 border border-slate-200 rounded-2xl p-3.5 sm:p-4">
+            <div className="flex items-center justify-between px-1 pb-2 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-emerald-800">
               <span>Этап III • Выход на 4★ и 5★</span>
               <span>Шаги 20 – 28</span>
             </div>
@@ -548,12 +546,12 @@ export const GearRoadmapGuide: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Motivation Banner from Screenshot */}
-        <div className="mt-6 sm:mt-8 pt-4 border-t border-sky-500/20 flex items-center justify-center gap-2.5 text-center relative z-10">
-          <div className="w-7 h-7 rounded-full bg-amber-500/20 border border-amber-400 flex items-center justify-center flex-shrink-0">
-            <span className="text-amber-400 text-sm">★</span>
+        {/* Bottom Motivation Banner */}
+        <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-center gap-2.5 text-center">
+          <div className="w-7 h-7 rounded-full bg-amber-100 border border-amber-300 flex items-center justify-center flex-shrink-0">
+            <span className="text-amber-600 text-sm">★</span>
           </div>
-          <p className="text-xs sm:text-sm md:text-base font-extrabold tracking-wide uppercase text-[#38bdf8]">
+          <p className="text-xs sm:text-sm font-extrabold tracking-wide uppercase text-slate-800">
             УЛУЧШАЙТЕ СНАРЯЖЕНИЕ ПО ПОРЯДКУ — РАСКРОЙТЕ МАКСИМАЛЬНУЮ СИЛУ СВОИХ ГЕРОЕВ!
           </p>
         </div>

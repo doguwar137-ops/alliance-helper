@@ -71,19 +71,19 @@ export const MinistersGuide: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Top Hero Banner */}
-      <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-8 border border-indigo-500/30 shadow-xl relative overflow-hidden">
-        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-extrabold uppercase tracking-wider">
-              <Crown className="w-4 h-4 text-amber-400" />
+      <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-2xs relative overflow-hidden">
+        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+          <div className="max-w-3xl space-y-2">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider">
+              <Crown className="w-4 h-4 text-amber-600" />
               <span>Серверные Баффы • Кабинет Министров</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
               Гайд по министрам в Last Asylum
             </h1>
-            <p className="text-sm sm:text-base text-indigo-100/90 leading-relaxed font-medium">
+            <p className="text-sm text-slate-600 leading-relaxed">
               Министры нужны для одной цели —{" "}
-              <span className="text-amber-300 font-extrabold underline decoration-amber-400/60 underline-offset-4">
+              <span className="text-amber-700 font-bold">
                 дать мощный бафф к скорости (ускорение)
               </span>{" "}
               перед тем, как вы запустите долгую стройку или исследование технологий.
@@ -91,13 +91,13 @@ export const MinistersGuide: React.FC = () => {
           </div>
 
           {/* Copy Buttons */}
-          <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 flex-shrink-0">
+          <div className="flex flex-wrap items-center gap-2.5 flex-shrink-0">
             <button
               onClick={handleCopyFull}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer border ${
+              className={`flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs ${
                 copiedFull
-                  ? "bg-emerald-600 text-white border-emerald-500"
-                  : "bg-amber-500 hover:bg-amber-400 text-slate-950 border-amber-400 shadow-lg"
+                  ? "bg-emerald-600 text-white border-emerald-600"
+                  : "bg-amber-600 hover:bg-amber-700 text-white border-amber-600"
               }`}
             >
               {copiedFull ? (
@@ -115,20 +115,20 @@ export const MinistersGuide: React.FC = () => {
 
             <button
               onClick={handleCopyChat}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer border ${
+              className={`flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs ${
                 copiedChat
-                  ? "bg-emerald-600 text-white border-emerald-500"
-                  : "bg-white/10 hover:bg-white/20 text-white border-white/20"
+                  ? "bg-emerald-50 text-emerald-800 border-emerald-300"
+                  : "bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-300"
               }`}
             >
               {copiedChat ? (
                 <>
-                  <Check className="w-4 h-4" />
+                  <Check className="w-4 h-4 text-emerald-600" />
                   <span>Скопировано для чата!</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-4 h-4" />
+                  <Copy className="w-4 h-4 text-slate-500" />
                   <span>Кратко в чат альянса</span>
                 </>
               )}

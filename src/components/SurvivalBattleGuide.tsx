@@ -101,41 +101,38 @@ export const SurvivalBattleGuide: React.FC = () => {
   return (
     <div id="survival-battle-guide-container" className="space-y-6">
       {/* Hero Header Banner */}
-      <div className="rounded-3xl bg-gradient-to-br from-amber-950 via-slate-900 to-indigo-950 text-white p-6 sm:p-8 border border-amber-500/30 shadow-xl relative overflow-hidden">
-        <div className="absolute -right-12 -bottom-12 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -left-12 -top-12 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-2xs relative overflow-hidden">
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
           <div className="space-y-2.5 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold">
-              <Zap className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider">
+              <Zap className="w-3.5 h-3.5 text-amber-600" />
               <span>ТАКТИЧЕСКИЙ РЕГЛАМЕНТ • X2 НАГРАДЫ</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
               Секрет Двойных Наград: Синхронизация Дуэли и Битвы на выживание
             </h1>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              Многие игроки совершают грубую ошибку: сливают ресурсы сразу же, как только начинается новый день Дуэли Альянсов. В итоге они забирают награды Дуэли, но полностью упускают очки в <strong>Битве на выживание (Survival Battle)</strong>.
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Многие игроки совершают грубую ошибку: сливают ресурсы сразу же, как только начинается новый день Дуэли Альянсов. В итоге они забирают награды Дуэли, но полностью упускают очки в <strong className="text-slate-900">Битве на выживание (Survival Battle)</strong>.
             </p>
-            <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-400/30 text-amber-200 text-xs font-semibold flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-amber-400 flex-shrink-0" />
-              <span>Самая эффективная стратегия — совершать <strong>всего ОДНО действие</strong>, а ценные сундуки и очки капают сразу в <strong>два зачета одновременно</strong>!</span>
+            <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200 text-amber-900 text-xs font-semibold flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-amber-600 flex-shrink-0" />
+              <span>Самая эффективная стратегия — совершать <strong>всего ОДНО действие</strong>, а ценные сундуки и очки идут сразу в <strong>два зачета одновременно</strong>!</span>
             </div>
           </div>
 
           {/* Copy Button */}
           <button
             onClick={handleCopyGuide}
-            className="self-start md:self-center px-4 py-2.5 rounded-2xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs sm:text-sm transition-all shadow-lg flex items-center gap-2 cursor-pointer flex-shrink-0 border border-amber-400/40"
+            className="self-start md:self-center px-3.5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs transition-all shadow-2xs flex items-center gap-2 cursor-pointer flex-shrink-0 border border-amber-600"
           >
             {copiedText ? (
               <>
-                <Check className="w-4 h-4 text-emerald-300" />
+                <Check className="w-4 h-4 text-white" />
                 <span>Скопировано в буфер!</span>
               </>
             ) : (
               <>
-                <Copy className="w-4 h-4 text-amber-100" />
+                <Copy className="w-4 h-4 text-white" />
                 <span>Скопировать гайд для соклановцев</span>
               </>
             )}

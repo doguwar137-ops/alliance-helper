@@ -265,20 +265,20 @@ ${currentDay.phaseName}
 
         {/* Monday Special Banner: Epigraphs and Raven Upgrade System */}
         {currentDay.id === "monday" && (
-          <div className="mt-4 p-5 rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-amber-950 text-white border-2 border-amber-400/60 shadow-md space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-500/20 pb-3">
+          <div className="mt-4 p-5 rounded-xl bg-amber-50/70 border border-amber-200 text-slate-900 shadow-2xs space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-200/80 pb-3">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-300">
-                  <Sparkles className="w-5 h-5 text-amber-400" />
+                <div className="p-2.5 rounded-xl bg-amber-100 border border-amber-200 text-amber-700">
+                  <Sparkles className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-amber-500/30 text-amber-300 border border-amber-400/40">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-amber-200/80 text-amber-900 border border-amber-300">
                       СИСТЕМА ЭПИГРАФОВ И ВОРОНА
                     </span>
-                    <span className="text-xs font-bold text-amber-200">ГЛАВНЫЙ СЕКРЕТ ПОНЕДЕЛЬНИКА</span>
+                    <span className="text-xs font-bold text-amber-800">ГЛАВНЫЙ СЕКРЕТ ПОНЕДЕЛЬНИКА</span>
                   </div>
-                  <h3 className="text-base sm:text-lg font-black text-white mt-0.5">
+                  <h3 className="text-base sm:text-lg font-extrabold text-slate-900 mt-0.5">
                     Как это работает и почему именно в понедельник:
                   </h3>
                 </div>
@@ -287,42 +287,42 @@ ${currentDay.phaseName}
 
             {/* 2 Core Principles */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1.5">
-                <div className="flex items-center gap-2 text-amber-300 font-bold text-xs">
-                  <Zap className="w-4 h-4 text-amber-400 flex-shrink-0" />
+              <div className="p-3.5 rounded-xl bg-white border border-amber-200/80 space-y-1.5 shadow-2xs">
+                <div className="flex items-center gap-2 text-amber-800 font-bold text-xs">
+                  <Zap className="w-4 h-4 text-amber-600 flex-shrink-0" />
                   <span>1. Набор очков для Дуэли</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 leading-relaxed">
                   Понедельник стал ключевым днем, когда за прокачку системы Ворона (использование эссенций, фруктов) и за открытие сундуков с эпиграфами начисляется <strong>огромное количество очков в зачет состязания</strong>.
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1.5">
-                <div className="flex items-center gap-2 text-emerald-300 font-bold text-xs">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+              <div className="p-3.5 rounded-xl bg-white border border-amber-200/80 space-y-1.5 shadow-2xs">
+                <div className="flex items-center gap-2 text-emerald-800 font-bold text-xs">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   <span>2. Двойная выгода</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 leading-relaxed">
                   Копить сундуки эпиграфов (зеленые, синие, фиолетовые, золотые) в течение недели и открывать их <strong>исключительно по понедельникам</strong> считается самой эффективной стратегией. Вы одновременно развиваете Ворона и продвигаете свой альянс к наградам этапа.
                 </p>
               </div>
             </div>
 
             {/* Critical Rules to Remember */}
-            <div className="p-4 rounded-xl bg-black/40 border border-amber-500/30 space-y-2">
-              <div className="text-xs font-bold text-amber-300 uppercase tracking-wide flex items-center gap-1.5">
-                <Info className="w-4 h-4 text-amber-400" />
+            <div className="p-4 rounded-xl bg-white border border-amber-200 space-y-2 shadow-2xs">
+              <div className="text-xs font-bold text-amber-900 uppercase tracking-wide flex items-center gap-1.5">
+                <Info className="w-4 h-4 text-amber-600" />
                 <span>Что важно помнить при работе с эпиграфами:</span>
               </div>
-              <ul className="space-y-2 text-xs text-slate-200">
+              <ul className="space-y-2 text-xs text-slate-700">
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-400 font-bold">•</span>
+                  <span className="text-amber-600 font-bold">•</span>
                   <span>
-                    <strong>Строгая привязка к фракциям:</strong> Эпиграфы жестко привязаны к типам отрядов (<span className="text-amber-300">Воины</span>, <span className="text-sky-300">Стрелки/Рейнджеры</span>, <span className="text-purple-300">Маги/Колдуны</span>). Очки в дуэли вы получите за любые действия, но для боевой мощи крафтите эпиграфы <strong>только под класс вашего основного отряда</strong>.
+                    <strong>Строгая привязка к фракциям:</strong> Эпиграфы жестко привязаны к типам отрядов (<span className="font-semibold text-amber-800">Воины</span>, <span className="font-semibold text-sky-800">Стрелки/Рейнджеры</span>, <span className="font-semibold text-purple-800">Маги/Колдуны</span>). Очки в дуэли вы получите за любые действия, но для боевой мощи крафтите эпиграфы <strong>только под класс вашего основного отряда</strong>.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-400 font-bold">•</span>
+                  <span className="text-amber-600 font-bold">•</span>
                   <span>
                     <strong>Мастерская эпиграфов:</strong> Чтобы крафтить топовые оранжевые (UR) эпиграфы, ваше здание мастерской должно быть прокачано <strong>до 20-го уровня</strong>.
                   </span>
@@ -334,14 +334,14 @@ ${currentDay.phaseName}
 
         {/* Tuesday Special Banner: Sanctuary Upgrade Table */}
         {currentDay.id === "tuesday" && onOpenSanctuary && (
-          <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-amber-500/10 via-amber-50 to-orange-50 border-2 border-amber-400 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+          <div className="mt-4 p-4 rounded-xl bg-amber-50/70 border border-amber-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-amber-600 text-white shadow-xs">
+              <div className="p-2.5 rounded-xl bg-amber-100 text-amber-700 border border-amber-200 flex-shrink-0">
                 <Castle className="w-5 h-5" />
               </div>
               <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-amber-200 text-amber-900 border border-amber-300">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-amber-200/80 text-amber-900 border border-amber-300">
                     СТРОИТЕЛЬСТВО 1–30 УРОВНЯ
                   </span>
                   <span className="text-xs font-bold text-amber-900">ЭКОНОМИЯ РЕСУРСОВ</span>
@@ -363,32 +363,32 @@ ${currentDay.phaseName}
 
         {/* Saturday Special Banner: Shields and Teleportation */}
         {currentDay.id === "saturday" && (
-          <div className="mt-4 p-5 rounded-2xl bg-gradient-to-br from-rose-950 via-slate-900 to-amber-950 text-white border-2 border-rose-400/60 shadow-md space-y-3.5">
-            <div className="flex items-center gap-3 border-b border-rose-500/20 pb-3">
-              <div className="p-2.5 rounded-xl bg-rose-500/20 border border-rose-400/40 text-rose-300 flex-shrink-0">
-                <ShieldAlert className="w-5 h-5 text-rose-400" />
+          <div className="mt-4 p-5 rounded-xl bg-rose-50/70 border border-rose-200 text-slate-900 shadow-2xs space-y-3.5">
+            <div className="flex items-center gap-3 border-b border-rose-200 pb-3">
+              <div className="p-2.5 rounded-xl bg-rose-100 border border-rose-200 text-rose-700 flex-shrink-0">
+                <ShieldAlert className="w-5 h-5 text-rose-600" />
               </div>
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-rose-500/30 text-rose-200 border border-rose-400/40">
+                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-rose-200/80 text-rose-900 border border-rose-300">
                     ВОЙНА СЕРВЕРОВ (КВК)
                   </span>
-                  <span className="text-xs font-bold text-amber-300">ПРАВИЛА ВЫЖИВАНИЯ</span>
+                  <span className="text-xs font-bold text-rose-800">ПРАВИЛА БЕЗОПАСНОСТИ</span>
                 </div>
-                <h3 className="text-base sm:text-lg font-black text-white mt-0.5">
+                <h3 className="text-base sm:text-lg font-extrabold text-slate-900 mt-0.5">
                   Щиты и телепортация
                 </h3>
               </div>
             </div>
 
-            <div className="space-y-2.5 text-xs sm:text-sm text-slate-200 leading-relaxed">
-              <p className="p-3 rounded-xl bg-white/5 border border-white/10">
+            <div className="space-y-2.5 text-xs sm:text-sm text-slate-800 leading-relaxed">
+              <p className="p-3 rounded-xl bg-white border border-rose-200/80 shadow-2xs">
                 Защитный щит желательно активировать ещё в пятницу вечером. Во время КвК вашу крепость может атаковать не только дуэльный соперник, но и любые другие игроки вражеского королевства.
               </p>
-              <p className="p-3 rounded-xl bg-rose-500/10 border border-rose-400/30 text-rose-100">
+              <p className="p-3 rounded-xl bg-white border border-rose-200/80 shadow-2xs">
                 Помните: после вашей собственной атаки щит автоматически снимается и включается режим <strong>«боевого безумия»</strong>. Он длится <strong>15 минут</strong>. Если в течение этого времени вы не совершите новых атак, режим спадет и вы снова сможете надеть щит. В этот опасный период лучше сразу телепортироваться в безопасную точку — подальше от места сбора альянса. Возвращаться на территорию своего альянса рекомендуется только после того, как вы снова будете под защитой щита.
               </p>
-              <p className="p-3 rounded-xl bg-amber-500/10 border border-amber-400/30 text-amber-100">
+              <p className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-950 font-medium shadow-2xs">
                 В сумке всегда должен быть запас из щитов и нескольких телепортов. Бесплатного 8-часового щита обычно не хватает, чтобы перекрыть весь опасный период события.
               </p>
             </div>
@@ -397,29 +397,23 @@ ${currentDay.phaseName}
 
         {/* Ministers Guide Banner (Highlighted especially on Tuesday & Wednesday) */}
         {onOpenMinisters && (
-          <div
-            className={`mt-4 p-4 rounded-xl border-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs ${
-              currentDay.id === "tuesday" || currentDay.id === "wednesday"
-                ? "bg-gradient-to-r from-amber-100/90 via-amber-50 to-sky-50 border-amber-500"
-                : "bg-gradient-to-r from-slate-50 via-amber-50/40 to-sky-50/40 border-amber-300"
-            }`}
-          >
+          <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-amber-500 text-slate-950 shadow-xs flex-shrink-0">
+              <div className="p-2.5 rounded-xl bg-amber-100 text-amber-700 border border-amber-200 flex-shrink-0">
                 <Crown className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-amber-200 text-amber-950 border border-amber-400">
+                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-200">
                     ГАЙД ПО МИНИСТРАМ (5 МИНУТ НА ЗАПУСК)
                   </span>
                   {currentDay.id === "tuesday" && (
-                    <span className="text-xs font-extrabold text-amber-900">
+                    <span className="text-xs font-bold text-amber-800">
                       🏗️ Вторник: Министр Строительства (+50% к скорости)
                     </span>
                   )}
                   {currentDay.id === "wednesday" && (
-                    <span className="text-xs font-extrabold text-sky-900">
+                    <span className="text-xs font-bold text-sky-800">
                       🔬 Среда: Министр Исследований (+25% к скорости)
                     </span>
                   )}
@@ -431,7 +425,7 @@ ${currentDay.phaseName}
             </div>
             <button
               onClick={onOpenMinisters}
-              className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+              className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
             >
               <span>Инструкция (4 шага)</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -439,30 +433,30 @@ ${currentDay.phaseName}
           </div>
         )}
 
-        {/* Gear Upgrade Roadmap Banner (Especially relevant on Wednesday & Thursday, or anytime) */}
+        {/* Gear Upgrade Roadmap Banner */}
         {onOpenGearRoadmap && (
-          <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-[#091326] via-[#111c33] to-[#091326] border border-amber-500/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md text-white">
+          <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-400 text-amber-300 shadow-xs">
+              <div className="p-2.5 rounded-xl bg-amber-100 border border-amber-200 text-amber-700 flex-shrink-0">
                 <Sparkles className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-amber-500 text-slate-950">
+                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-200">
                     ДОРОЖНАЯ КАРТА СНАРЯЖЕНИЯ
                   </span>
-                  <span className="text-xs font-bold text-amber-300">
+                  <span className="text-xs font-bold text-slate-700">
                     Оптимальный порядок (Шаги 1–28)
                   </span>
                 </div>
-                <p className="text-xs text-slate-300 mt-0.5">
+                <p className="text-xs text-slate-700 mt-0.5">
                   Как правильно прокачивать снаряжение для Марлены, Зои, Даскала, Артура и Харпер до 40 ур. и 5★!
                 </p>
               </div>
             </div>
             <button
               onClick={onOpenGearRoadmap}
-              className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+              className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
             >
               <span>Открыть карту снаряжения</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -472,28 +466,28 @@ ${currentDay.phaseName}
 
         {/* Era of Revival Season Guide Banner */}
         {onOpenEraRevival && (
-          <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-indigo-950 via-[#191636] to-slate-900 border border-indigo-400/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md text-white">
+          <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-indigo-500/20 border border-indigo-400 text-indigo-300 shadow-xs">
+              <div className="p-2.5 rounded-xl bg-indigo-100 border border-indigo-200 text-indigo-700 flex-shrink-0">
                 <Flame className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-indigo-400 text-slate-950">
+                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-indigo-100 text-indigo-900 border border-indigo-200">
                     СЕЗОН «ЭРА ВОЗРОЖДЕНИЯ»
                   </span>
-                  <span className="text-xs font-bold text-amber-300">
+                  <span className="text-xs font-bold text-slate-700">
                     Статуя Лорда • Пробуждение Марлены • UR-Клэр • Оружие Даскала
                   </span>
                 </div>
-                <p className="text-xs text-slate-300 mt-0.5">
+                <p className="text-xs text-slate-700 mt-0.5">
                   Полный разбор двухмесячного сезона: какую ветку специализации выбрать («Умелец» или «Командир»), как получать фрагменты эксклюзивного оружия и пробуждения!
                 </p>
               </div>
             </div>
             <button
               onClick={onOpenEraRevival}
-              className="px-4 py-2 rounded-xl bg-indigo-400 hover:bg-indigo-300 text-slate-950 text-xs font-extrabold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+              className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
             >
               <span>Гайд по Эре</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -631,7 +625,7 @@ ${currentDay.phaseName}
               Стратегия Сырной Ловушки
             </h4>
             <p className="text-xs text-slate-600">
-              Перед началом события запускаем Боевое безумие на 15 мин (разведка на «бомжа»). Остановка сразу при капе личных наград!
+              Перед началом события запускаем Боевое безумие на 15 мин (разведка на «бомжа»). Остановка сразу при получении всех личных наград!
             </p>
           </div>
         </div>

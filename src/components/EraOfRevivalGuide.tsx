@@ -57,7 +57,7 @@ const SPEC_UNLOCK_LEVELS: SpecUnlockLevel[] = [
   {
     level: 40,
     reward: "Доступ к фрагментам оружия через Магазин святилища",
-    note: "Максимальный тир разблокировки магазинов сезона.",
+    note: "Максимальный уровень доступа к магазинам сезона.",
     highlight: true,
   },
 ];
@@ -71,10 +71,10 @@ export const EraOfRevivalGuide: React.FC = () => {
     const text = `🔥 ГАЙД ПО СЕЗОНУ «ЭРА ВОЗРОЖДЕНИЯ» (2 МЕСЯЦА) 🔥
 
 🏛️ 1. СТАТУЯ ЛОРДА: СПЕЦИАЛИЗАЦИЯ И СОПРОТИВЛЕНИЕ
-• Цепочка прогресса: Уровень Специализации ➔ больше опыта Сопротивления в час со Статуи ➔ возможность бить сезонных мобов выше уровнем ➔ топ-награды.
+• Цепочка прогресса: Уровень Специализации ➔ больше опыта Сопротивления в час со Статуи ➔ возможность бить сезонных монстров выше уровнем ➔ лучшие награды.
 • Выбор ветки (смена только через редкую Книгу сброса!):
-  - 🛠️ УМЕЛЕЦ (Рекомендуется на старте и для F2P): быстрый разгон специализации, максимум пользы от ежедневок, выносливости и охоты на монстров.
-  - ⚔️ КОМАНДИР ЛЕГИОНА: боевая ветка для топ-игроков под КВК, сборы и битву за трон.
+  - 🛠️ УМЕЛЕЦ (Рекомендуется на старте и без доната): быстрый разгон специализации, максимум пользы от ежедневных заданий, выносливости и охоты на монстров.
+  - ⚔️ КОМАНДИР ЛЕГИОНА: боевая ветка для сильных игроков под КВК, штурмы и битву за трон.
 • Уровни Специализации (открывают фрагменты эксклюзивного оружия):
   - 10 ур.: 1 бесплатный прямой телепорт в день (не копится!)
   - 15 ур.: фрагменты оружия в Битве за выживание (с 8-го дня Эры, сундук за 18 очков)
@@ -84,20 +84,20 @@ export const EraOfRevivalGuide: React.FC = () => {
   - 40 ур.: доступ в Магазине святилища
 
 ⚔️ 2. ПРОБУЖДЕНИЕ МАРЛЕНЫ И UR-КЛЭР
-• Пробуждение Марлены: обычные фрагменты идут только на звёзды! Для старта пробуждения нужно 50 индивидуальных фрагментов пробуждения (далее — индивидуальные или универсальные из 6 и 9 сундуков Дуэли альянсов, магазина чести и экспедиции). Даёт механику «Боевая воля» (стаки от критов, бафф атаки/HP/защиты всех воинов в отряде).
-• Возвышение Клэр (SSR ➔ UR бесплатно на 2-й неделе): медаль даётся за прогресс Сопротивления. После возвышения Клэр пропадает из Зала славы (ресурсы вернутся на почту!), звёзды становятся ~6★, а навыки сбрасываются. Сначала восстановите её ключевую пассивку — она топ PvE-саппорт для воинов и Марлены!
+• Пробуждение Марлены: обычные фрагменты идут только на звёзды! Для старта пробуждения нужно 50 индивидуальных фрагментов пробуждения (далее — индивидуальные или универсальные из 6 и 9 сундуков Дуэли альянсов, магазина чести и экспедиции). Даёт механику «Боевая воля» (заряды от критических ударов, усиление атаки, здоровья и защиты всех воинов в отряде).
+• Возвышение Клэр (SSR ➔ UR бесплатно на 2-й неделе): медаль даётся за прогресс Сопротивления. После возвышения Клэр пропадает из Зала славы (ресурсы вернутся на почту!), звёзды становятся ~6★, а навыки сбрасываются. Сначала восстановите её ключевой пассивный навык — она отличный герой поддержки против монстров для воинов и Марлены!
 
-🛡️ 3. ЭКСКЛЮЗИВНОЕ ОРУЖИЕ ДАСКАЛА И БОНУСЫ ПРОТИВ МОБОВ
-• Оружие Даскала (со 2-й недели): отдельный слот экипировки (не заменяет обычный меч!). 4★ — урон 1-го навыка; 6★ — щит саппорту при HP < 50%; 8★ — хил от 2-го навыка +400%; 10★ — ульта даёт +30% поглощающего щита.
-• Бонусы Эры против монстров (соберите отдельную PvE-пачку!):
+🛡️ 3. ЭКСКЛЮЗИВНОЕ ОРУЖИЕ ДАСКАЛА И БОНУСЫ ПРОТИВ МОНСТРОВ
+• Оружие Даскала (со 2-й недели): отдельный слот экипировки (не заменяет обычный меч!). 4★ — урон 1-го навыка; 6★ — щит герою поддержки при здоровье ниже 50%; 8★ — восстановление здоровья от 2-го навыка +400%; 10★ — высший навык даёт +30% поглощающего щита.
+• Бонусы Эры против монстров (соберите отдельный отряд для охоты!):
   - +5% урона по монстрам за каждого: Клэр, Марлена, Синтия, Энни.
   - -5% урона от монстров за каждого: Даскал, Луи, Ульфрид.
 
 🛒 4. МАГАЗИН ЭРЫ, БАШНЯ 60 УР. И СОЛДАТСКИЙ ПРИЮТ
 • Магазин Эры: главный приоритет — КРАСНЫЕ ЧЕРТЕЖИ (для снаряжения 5★).
-• Башня экспедиции (до 60 ур.): на этажах 50+ из золотых сундуков падают универсальные фрагменты эксклюзивного оружия.
+• Башня экспедиции (до 60 ур.): на этажах 50+ из золотых сундуков выпадают универсальные фрагменты эксклюзивного оружия.
 • Солдатский приют: часть погибших солдат попадает в приют и со временем возвращается в казармы.
-• Таверна и Рулетка: Даскал и Леди добавлены в обычную таверну (крутим билеты строго по четвергам в Дуэль!). Рулетку Марлены (9000 алмазов за 10 круток) F2P-игрокам при 10★ Марлене лучше пропустить.`;
+• Таверна и Рулетка: Даскал и Леди добавлены в обычную таверну (крутим билеты строго по четвергам в Дуэль!). Рулетку Марлены (9000 алмазов за 10 попыток) игрокам без доната при 10★ Марлене лучше пропустить.`;
 
     navigator.clipboard.writeText(text);
     setCopiedMail(true);
@@ -105,7 +105,7 @@ export const EraOfRevivalGuide: React.FC = () => {
   };
 
   const handleCopyShortChat = () => {
-    const text = `🔥 ЭРА ВОЗРОЖДЕНИЯ (Главное): 1) Качаем Статую Лорда (ветка «Умелец» для разгона ➔ 15-40 ур. открывают фрагменты эксклюзивного оружия!). 2) Закрываем Битву за выживание (18 очков) и 6/9 сундуки Дуэли (универсальные фрагменты пробуждения). 3) На 2-й неделе бесплатно возвышаем Клэр до UR (заберите возврат ресурсов с почты и качните пассивку!). 4) В Магазине Эры берем Красные чертежи!`;
+    const text = `🔥 ЭРА ВОЗРОЖДЕНИЯ (Главное): 1) Качаем Статую Лорда (ветка «Умелец» для разгона ➔ 15-40 ур. открывают фрагменты эксклюзивного оружия!). 2) Закрываем Битву за выживание (18 очков) и 6/9 сундуки Дуэли (универсальные фрагменты пробуждения). 3) На 2-й неделе бесплатно возвышаем Клэр до UR (заберите возврат ресурсов с почты и прокачайте пассивный навык!). 4) В Магазине Эры берем Красные чертежи!`;
     navigator.clipboard.writeText(text);
     setCopiedChat(true);
     setTimeout(() => setCopiedChat(false), 2500);
@@ -115,68 +115,65 @@ export const EraOfRevivalGuide: React.FC = () => {
     { id: "all", label: "Все разделы (Полный гайд)" },
     { id: "statue", label: "Статуя Лорда и Специализация" },
     { id: "heroes", label: "Марлена, UR-Клэр и Оружие Даскала" },
-    { id: "economy", label: "Магазины, Таверна и План F2P" },
+    { id: "economy", label: "Магазины, Таверна и План действий" },
   ];
 
   return (
     <div id="era-of-revival-guide" className="space-y-6">
-      {/* Hero Header Banner */}
-      <div className="relative rounded-2xl bg-gradient-to-br from-[#0c1428] via-[#172342] to-[#1e1533] text-white p-6 sm:p-8 border-2 border-amber-500/70 shadow-xl overflow-hidden">
-        <div className="absolute -top-24 -right-24 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-5 border-b border-amber-500/20 pb-5">
-          <div className="space-y-2 max-w-3xl">
+      {/* Unified Light Header Banner */}
+      <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-2xs space-y-4">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+          <div className="space-y-1.5 max-w-3xl">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-2.5 py-1 rounded-md bg-amber-500 text-slate-950 text-xs font-black font-mono uppercase tracking-wider flex items-center gap-1.5">
-                <Flame className="w-3.5 h-3.5" />
+              <span className="px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold font-mono uppercase tracking-wider flex items-center gap-1.5">
+                <Flame className="w-3.5 h-3.5 text-amber-600" />
                 СЕЗОННОЕ ОБНОВЛЕНИЕ (2 МЕСЯЦА)
               </span>
-              <span className="px-2.5 py-1 rounded-md bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-xs font-bold font-mono">
+              <span className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold">
                 32 СЕРВЕРА • ПРОБУЖДЕНИЕ • ЭКСКЛЮЗИВНОЕ ОРУЖИЕ
               </span>
             </div>
-            <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
+            <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900">
               Гайд по сезону «Эра Возрождения»
             </h1>
-            <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Эра Возрождения — это двухмесячная сезонная система, где все механики связаны в одну цепочку:{" "}
-              <strong className="text-amber-300">
-                Специализация ускоряет Сопротивление ➔ Сопротивление открывает сезонных мобов и UR-Клэр ➔ Уровни Специализации открывают фрагменты эксклюзивного оружия
+              <strong className="text-slate-900">
+                Специализация ускоряет Сопротивление ➔ Сопротивление открывает сезонных монстров и UR-Клэр ➔ Уровни Специализации открывают фрагменты эксклюзивного оружия
               </strong>
               . Пробуждение героев и оружие остаются у вас навсегда после окончания Эры!
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 flex-shrink-0">
             <button
               onClick={handleCopyFullGuide}
-              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold transition-all shadow-md cursor-pointer"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs cursor-pointer"
             >
               {copiedMail ? (
                 <>
-                  <Check className="w-4 h-4 text-slate-950" />
+                  <Check className="w-4 h-4 text-white" />
                   <span>Скопировано для Альянса!</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-4 h-4" />
+                  <Copy className="w-4 h-4 text-white" />
                   <span>Скопировать весь гайд</span>
                 </>
               )}
             </button>
             <button
               onClick={handleCopyShortChat}
-              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all cursor-pointer"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 text-xs font-bold transition-all cursor-pointer"
             >
               {copiedChat ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-400" />
-                  <span className="text-emerald-300">Скопировано для чата!</span>
+                  <Check className="w-4 h-4 text-emerald-600" />
+                  <span className="text-emerald-700">Скопировано для чата!</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-4 h-4 text-amber-300" />
+                  <Copy className="w-4 h-4 text-slate-500" />
                   <span>Краткая памятка в чат</span>
                 </>
               )}
@@ -185,15 +182,15 @@ export const EraOfRevivalGuide: React.FC = () => {
         </div>
 
         {/* Filter Bar */}
-        <div className="relative z-10 flex flex-wrap items-center gap-2 pt-4">
+        <div className="flex flex-wrap items-center gap-1.5">
           {filterButtons.map((btn) => (
             <button
               key={btn.id}
               onClick={() => setActiveSection(btn.id)}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 activeSection === btn.id
-                  ? "bg-amber-400 text-slate-950 shadow-xs"
-                  : "bg-white/10 hover:bg-white/15 text-slate-200 border border-white/15"
+                  ? "bg-amber-600 text-white shadow-xs"
+                  : "bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200"
               }`}
             >
               {btn.label}
@@ -296,7 +293,7 @@ export const EraOfRevivalGuide: React.FC = () => {
               <div className="rounded-xl bg-emerald-50/70 border-2 border-emerald-400 p-4 sm:p-5 space-y-2.5">
                 <div className="flex items-center justify-between gap-2">
                   <span className="px-2.5 py-0.5 rounded-md bg-emerald-600 text-white text-[11px] font-extrabold uppercase font-mono">
-                    РЕКОМЕНДУЕТСЯ НА СТАРТЕ / F2P
+                    РЕКОМЕНДУЕТСЯ НА СТАРТЕ И БЕЗ ДОНАТА
                   </span>
                   <span className="text-xs font-bold text-emerald-800">Ветка Развития</span>
                 </div>
@@ -304,14 +301,14 @@ export const EraOfRevivalGuide: React.FC = () => {
                   <span>🛠️ Специализация «Умелец»</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                  Идеальный выбор для старта сезона, F2P и low-spend игроков. Позволяет <strong>быстрее качать саму специализацию и сопротивление</strong>, получать максимум выгоды от ежедневных активностей, эффективнее фармить сезонных монстров и лучше расходовать выносливость.
+                  Лучший выбор для старта сезона и для большинства игроков. Позволяет <strong>быстрее прокачивать саму специализацию и сопротивление</strong>, получать максимум пользы от ежедневных заданий, эффективнее бить сезонных монстров и экономнее расходовать выносливость.
                 </p>
               </div>
 
               <div className="rounded-xl bg-rose-50/60 border border-rose-300 p-4 sm:p-5 space-y-2.5">
                 <div className="flex items-center justify-between gap-2">
                   <span className="px-2.5 py-0.5 rounded-md bg-rose-600 text-white text-[11px] font-extrabold uppercase font-mono">
-                    ДЛЯ ТОП-БОЙЦОВ И КВК
+                    ДЛЯ СИЛЬНЫХ БОЙЦОВ И КВК
                   </span>
                   <span className="text-xs font-bold text-rose-800">Боевая Ветка</span>
                 </div>
@@ -319,7 +316,7 @@ export const EraOfRevivalGuide: React.FC = () => {
                   <span>⚔️ Специализация «Командир легиона»</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                  Боевая ветка для тех, кто постоянно воюет в верхней части альянса, водит сборы, бьётся за трон и давит рейтинг КВК. <strong>Внимание:</strong> смена ветки требует редкую <em>Книгу сброса</em>, поэтому в начале сезона выгоднее сначала разогнать аккаунт через «Умельца»!
+                  Боевая ветка для тех, кто постоянно воюет в первых рядах альянса, водит штурмы, бьётся за трон и набирает боевой рейтинг в КВК. <strong>Внимание:</strong> смена ветки требует редкую <em>Книгу сброса</em>, поэтому в начале сезона выгоднее сначала развить аккаунт через «Умельца»!
                 </p>
               </div>
             </div>
@@ -371,49 +368,49 @@ export const EraOfRevivalGuide: React.FC = () => {
         <div className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {/* Пробуждение Марлены */}
-            <div className="rounded-2xl bg-gradient-to-br from-slate-900 via-[#1a162b] to-slate-900 text-white p-5 sm:p-6 border-2 border-amber-500/60 shadow-md space-y-4">
+            <div className="rounded-2xl bg-white p-5 sm:p-6 border border-slate-200 shadow-2xs space-y-4">
               <div className="flex items-center justify-between gap-2 flex-wrap">
-                <span className="px-2.5 py-1 rounded-md bg-amber-500 text-slate-950 text-xs font-black font-mono uppercase">
+                <span className="px-2.5 py-1 rounded-md bg-amber-100 text-amber-900 border border-amber-200 text-xs font-extrabold font-mono uppercase">
                   ПЕРВЫЙ ПРОБУЖДЁННЫЙ ГЕРОЙ
                 </span>
-                <span className="text-xs font-bold text-amber-300 font-mono">
+                <span className="text-xs font-bold text-amber-800 font-mono">
                   Старт: 50 инд. фрагментов пробуждения
                 </span>
               </div>
 
-              <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-                <Flame className="w-6 h-6 text-amber-400 flex-shrink-0" />
-                <span>Пробуждение Марлены (Awakening)</span>
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                <Flame className="w-6 h-6 text-amber-600 flex-shrink-0" />
+                <span>Пробуждение Марлены</span>
               </h2>
 
-              <div className="p-3.5 rounded-xl bg-rose-500/15 border border-rose-400/40 text-xs text-rose-100 space-y-1">
-                <div className="font-extrabold text-rose-300 uppercase">
+              <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-950 space-y-1">
+                <div className="font-extrabold text-rose-800 uppercase">
                   ⚠️ Обычные фрагменты НЕ подходят для пробуждения!
                 </div>
                 <p>
-                  Простые фрагменты Марлены идут только на звёзды. Для старта пробуждения нужно <strong>50 индивидуальных фрагментов пробуждения Марлены</strong>, а дальше уровни качаются индивидуальными или <strong>универсальными фрагментами пробуждения</strong>.
+                  Простые фрагменты Марлены идут только на звёзды. Для старта пробуждения нужно <strong>50 индивидуальных фрагментов пробуждения Марлены</strong>, а дальше уровни прокачиваются индивидуальными или <strong>универсальными фрагментами пробуждения</strong>.
                 </p>
               </div>
 
-              <div className="space-y-2 text-xs sm:text-sm text-slate-200">
-                <div className="font-bold text-amber-300">
+              <div className="space-y-2 text-xs sm:text-sm text-slate-700">
+                <div className="font-bold text-slate-900">
                   Что даёт Пробуждение и механика «Боевая воля»:
                 </div>
                 <ul className="space-y-1.5">
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-400 font-bold">•</span>
+                    <span className="text-amber-600 font-bold">•</span>
                     <span>
-                      <strong>Стаки «Боевой воли»:</strong> при критах Марлена набирает стаки, повышающие её урон и выживаемость. Чем больше в отряде <strong>героев-воинов</strong>, тем выше лимит стаков!
+                      <strong>Заряды «Боевой воли»:</strong> при критических ударах Марлена накапливает заряды усиления, повышающие её урон и живучесть. Чем больше в отряде <strong>героев-воинов</strong>, тем выше предел зарядов!
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-400 font-bold">•</span>
+                    <span className="text-amber-600 font-bold">•</span>
                     <span>
-                      <strong>Командный бустер Воинов:</strong> повышает Атаку, HP и Защиту всех союзных воинов, накладывает ослабление на врагов, мощно стартует бой по цели с макс. HP и добавляет доп. удары меча.
+                      <strong>Усиление всех Воинов:</strong> повышает Атаку, Здоровье и Защиту всех союзных воинов, ослабляет врагов, мощно начинает бой по цели с наибольшим запасом здоровья и добавляет дополнительные удары меча.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-400 font-bold">•</span>
+                    <span className="text-emerald-600 font-bold">•</span>
                     <span>
                       <strong>Где брать фрагменты пробуждения:</strong> билет пропуска Эры, дневные акции (со 2-й недели), а универсальные — в <strong>6-й и 9-й контрольных точках Дуэли альянсов</strong>, магазине чести и магазине экспедиции.
                     </span>
@@ -423,38 +420,38 @@ export const EraOfRevivalGuide: React.FC = () => {
             </div>
 
             {/* Возвышение Клэр до UR */}
-            <div className="rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 text-white p-5 sm:p-6 border-2 border-sky-400/60 shadow-md space-y-4">
+            <div className="rounded-2xl bg-white p-5 sm:p-6 border border-slate-200 shadow-2xs space-y-4">
               <div className="flex items-center justify-between gap-2 flex-wrap">
-                <span className="px-2.5 py-1 rounded-md bg-sky-400 text-slate-950 text-xs font-black font-mono uppercase">
+                <span className="px-2.5 py-1 rounded-md bg-sky-100 text-sky-900 border border-sky-200 text-xs font-extrabold font-mono uppercase">
                   БЕСПЛАТНЫЙ ПЕРЕХОД SSR ➔ UR
                 </span>
-                <span className="text-xs font-bold text-sky-300 font-mono">
+                <span className="text-xs font-bold text-sky-800 font-mono">
                   2-я неделя Эры • За медаль Сопротивления
                 </span>
               </div>
 
-              <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-                <Sparkles className="w-6 h-6 text-sky-400 flex-shrink-0" />
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                <Sparkles className="w-6 h-6 text-sky-600 flex-shrink-0" />
                 <span>Возвышение Клэр до легендарного UR</span>
               </h2>
 
-              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-                На второй неделе Эры старую SSR-Клэр можно <strong>бесплатно поднять до UR</strong> с помощью специальной медали, которая выдаётся за прогресс Сопротивления. Она становится ключевым <strong>PvE-саппортом для пачки Воинов и Марлены</strong> (разгоняет урон по сезонным мобам и Королю демонов).
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                На второй неделе Эры старую SSR-Клэр можно <strong>бесплатно поднять до UR</strong> с помощью специальной медали, которая выдаётся за прогресс Сопротивления. Она становится важным <strong>героем поддержки против монстров для отряда Воинов и Марлены</strong> (увеличивает урон по сезонным монстрам и Королю демонов).
               </p>
 
-              <div className="p-3.5 rounded-xl bg-amber-500/15 border border-amber-400/40 text-xs text-amber-100 space-y-1.5">
-                <div className="font-extrabold text-amber-300 uppercase">
-                  ⚠️ Подвох при конверсии (Не пугайтесь после нажатия кнопки!):
+              <div className="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-950 space-y-1.5">
+                <div className="font-extrabold text-amber-900 uppercase">
+                  ⚠️ Важная особенность при улучшении до UR (Не пугайтесь!):
                 </div>
                 <ul className="space-y-1">
                   <li>
-                    • После возвышения Клэр <strong>пропадает из Зала славы</strong>, её навыки сбрасываются, а звёзды переходят примерно на <strong>6★</strong> (дальнейшая прокачка звёзд дороже ~в 2 раза).
+                    • После возвышения Клэр <strong>пропадает из Зала славы</strong>, её навыки сбрасываются, а звёзды переходят примерно на <strong>6★</strong> (дальнейшая прокачка звёзд стоит дороже примерно в 2 раза).
                   </li>
                   <li>
                     • <strong>Обязательно проверьте почту:</strong> часть ресурсов, вложенных в Зал славы, возвращается письмом!
                   </li>
                   <li>
-                    • <strong>Сначала верните пассивку:</strong> без прокачанного ключевого пассивного навыка UR-Клэр в первом бою покажется слабее старой SSR. Восстановите пассивку — и урон по боссам взлетит!
+                    • <strong>Сначала прокачайте пассивный навык:</strong> без прокачанного ключевого пассивного навыка UR-Клэр в первом бою покажется слабее старой SSR. Восстановите пассивный навык — и урон по боссам сильно вырастет!
                   </li>
                 </ul>
               </div>
@@ -497,7 +494,7 @@ export const EraOfRevivalGuide: React.FC = () => {
                 </div>
                 <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
                   <span className="font-black text-amber-700 block">⭐ 10 Звёзд</span>
-                  <span className="text-slate-700">Высший навык (ульта) получает ещё +30% поглощающего щита.</span>
+                  <span className="text-slate-700">Высший навык получает ещё +30% поглощающего щита.</span>
                 </div>
               </div>
             </div>
@@ -510,16 +507,16 @@ export const EraOfRevivalGuide: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-purple-100 text-purple-900">
-                    СЕКРЕТ ПРОБИТИЯ ВЫСОКИХ МОБОВ
+                    СЕКРЕТ ПРОБИТИЯ СИЛЬНЫХ МОНСТРОВ
                   </span>
                   <h2 className="text-lg font-extrabold text-slate-900 mt-0.5">
-                    Бонусы Эры: специальная PvE-пачка
+                    Бонусы Эры: специальный отряд против монстров
                   </h2>
                 </div>
               </div>
 
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                В разделе «Бонусы Эры» конкретные герои дают прямые процентные баффы против монстров. Когда вы упираетесь в сезонного моба высокого уровня, соберите <strong>отдельный PvE-отряд</strong> из этих героев:
+                В разделе «Бонусы Эры» конкретные герои дают прямые процентные усиления против монстров. Когда вы упираетесь в сезонного монстра высокого уровня, соберите <strong>отдельный отряд для охоты</strong> из этих героев:
               </p>
 
               <div className="space-y-2.5">
