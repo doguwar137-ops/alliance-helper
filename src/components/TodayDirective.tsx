@@ -379,34 +379,130 @@ ${currentDay.phaseName}
 
         {/* Saturday Special Banner: Shields and Teleportation */}
         {currentDay.id === "saturday" && (
-          <div className="mt-4 p-4 sm:p-5 rounded-xl bg-rose-50/70 border border-rose-200 text-slate-900 shadow-2xs space-y-3.5">
-            <div className="flex items-center gap-3 border-b border-rose-200 pb-3">
-              <div className="p-2.5 rounded-xl bg-rose-100 border border-rose-200 text-rose-700 flex-shrink-0">
-                <ShieldAlert className="w-5 h-5 text-rose-600" />
-              </div>
-              <div>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-rose-200/80 text-rose-900 border border-rose-300">
-                    ВОЙНА СЕРВЕРОВ (КВК)
-                  </span>
-                  <span className="text-xs font-bold text-rose-800">ПРАВИЛА БЕЗОПАСНОСТИ</span>
+          <div className="mt-4 space-y-4">
+            {/* How to Move (Free Raid Teleport) */}
+            <div className="p-4 sm:p-5 rounded-xl bg-indigo-50/70 border border-indigo-200 text-slate-900 shadow-2xs space-y-4">
+              <div className="flex items-center gap-3 border-b border-indigo-200 pb-3">
+                <div className="p-2.5 rounded-xl bg-indigo-100 border border-indigo-200 text-indigo-700 flex-shrink-0">
+                  <Zap className="w-5 h-5 text-indigo-600" />
                 </div>
-                <h3 className="text-base sm:text-lg font-extrabold text-slate-900 mt-0.5">
-                  Щиты и телепортация
-                </h3>
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-indigo-200/80 text-indigo-900 border border-indigo-300">
+                      СУББОТНИЙ РЕЙД
+                    </span>
+                    <span className="text-xs font-bold text-indigo-800">БЕСПЛАТНЫЙ ПЕРЕНОС</span>
+                  </div>
+                  <h3 className="text-base sm:text-lg font-extrabold text-slate-900 mt-0.5">
+                    Как перемещаться в субботу (через «Рейд»)
+                  </h3>
+                </div>
+              </div>
+
+              {/* 4 Steps */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm">
+                <div className="p-3 rounded-xl bg-white border border-indigo-200/80 shadow-2xs flex items-start gap-2.5">
+                  <span className="w-6 h-6 rounded-lg bg-indigo-600 text-white font-mono font-extrabold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                    1
+                  </span>
+                  <div>
+                    <div className="font-extrabold text-slate-900">Откройте меню дуэли</div>
+                    <p className="text-slate-700 mt-0.5 leading-relaxed">
+                      На главном экране игры нажмите на иконку <strong>«Дуэль»</strong>.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-3 rounded-xl bg-white border border-indigo-200/80 shadow-2xs flex items-start gap-2.5">
+                  <span className="w-6 h-6 rounded-lg bg-indigo-600 text-white font-mono font-extrabold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                    2
+                  </span>
+                  <div>
+                    <div className="font-extrabold text-slate-900">Перейдите во вкладку «Рейд»</div>
+                    <p className="text-slate-700 mt-0.5 leading-relaxed">
+                      В верхней части окна выберите раздел <strong>«Рейд»</strong>.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-3 rounded-xl bg-white border border-indigo-200/80 shadow-2xs flex items-start gap-2.5">
+                  <span className="w-6 h-6 rounded-lg bg-indigo-600 text-white font-mono font-extrabold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                    3
+                  </span>
+                  <div>
+                    <div className="font-extrabold text-slate-900">Запустите рейд</div>
+                    <p className="text-slate-700 mt-0.5 leading-relaxed">
+                      Нажмите кнопку <strong>«Пойти»</strong> (межсерверные рейды <strong>не расходуют</strong> ваши продвинутые телепорты).
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-3 rounded-xl bg-white border border-indigo-200/80 shadow-2xs flex items-start gap-2.5">
+                  <span className="w-6 h-6 rounded-lg bg-indigo-600 text-white font-mono font-extrabold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                    4
+                  </span>
+                  <div>
+                    <div className="font-extrabold text-slate-900">Выберите позицию</div>
+                    <p className="text-slate-700 mt-0.5 leading-relaxed">
+                      После переноса на сервер противника найдите свободное место на карте и нажмите <strong>«Перенос»</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Important Tips */}
+              <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-indigo-200/90 shadow-2xs space-y-2.5">
+                <div className="text-xs font-mono font-extrabold uppercase tracking-wider text-indigo-900 flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-indigo-600" />
+                  Важные советы по перемещению:
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-800 leading-relaxed">
+                  <div className="p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200">
+                    <strong className="text-emerald-950">🛡️ Защита:</strong> Ваш щит остается активным на протяжении всего процесса перемещения, поэтому вы защищены от нападений.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-amber-50/70 border border-amber-200">
+                    <strong className="text-amber-950">⏱️ Ограничение (Кулдаун):</strong> Перезарядка функции бесплатного рейда составляет <strong>3 минуты</strong>. По истечении этого времени вы сможете снова повторить маневр.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-sky-50/70 border border-sky-200">
+                    <strong className="text-sky-950">🏠 Возврат домой:</strong> Чтобы вернуться на свой домашний сервер, нажмите на <strong>синюю кнопку с белой стрелкой</strong> на панели таймера. После этого выберите новое бесплатное место для своего замка.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-purple-50/70 border border-purple-200">
+                    <strong className="text-purple-950">🔄 Локальное перемещение:</strong> Схема отлично работает для бесплатного перемещения внутри домашнего сервера: прыгаете через «Рейд» на чужую карту и сразу возвращаетесь обратно, чтобы бесплатно сменить позицию у себя дома.
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-2.5 text-xs sm:text-sm text-slate-800 leading-relaxed">
-              <p className="p-3 rounded-xl bg-white border border-rose-200/80 shadow-2xs">
-                Защитный щит желательно активировать ещё в пятницу вечером. Во время КвК вашу крепость может атаковать не только дуэльный соперник, но и любые другие игроки вражеского королевства.
-              </p>
-              <p className="p-3 rounded-xl bg-white border border-rose-200/80 shadow-2xs">
-                Помните: после вашей собственной атаки щит автоматически снимается и включается режим <strong>«боевого безумия»</strong>. Он длится <strong>15 минут</strong>. Если в течение этого времени вы не совершите новых атак, режим спадет и вы снова сможете надеть щит. В этот опасный период лучше сразу телепортироваться в безопасную точку — подальше от места сбора альянса. Возвращаться на территорию своего альянса рекомендуется только после того, как вы снова будете под защитой щита.
-              </p>
-              <p className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-950 font-medium shadow-2xs">
-                В сумке всегда должен быть запас из щитов и нескольких телепортов. Бесплатного 8-часового щита обычно не хватает, чтобы перекрыть весь опасный период события.
-              </p>
+            {/* Shields and Safety */}
+            <div className="p-4 sm:p-5 rounded-xl bg-rose-50/70 border border-rose-200 text-slate-900 shadow-2xs space-y-3.5">
+              <div className="flex items-center gap-3 border-b border-rose-200 pb-3">
+                <div className="p-2.5 rounded-xl bg-rose-100 border border-rose-200 text-rose-700 flex-shrink-0">
+                  <ShieldAlert className="w-5 h-5 text-rose-600" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-rose-200/80 text-rose-900 border border-rose-300">
+                      ВОЙНА СЕРВЕРОВ (КВК)
+                    </span>
+                    <span className="text-xs font-bold text-rose-800">ПРАВИЛА БЕЗОПАСНОСТИ</span>
+                  </div>
+                  <h3 className="text-base sm:text-lg font-extrabold text-slate-900 mt-0.5">
+                    Щиты и боевое безумие
+                  </h3>
+                </div>
+              </div>
+
+              <div className="space-y-2.5 text-xs sm:text-sm text-slate-800 leading-relaxed">
+                <p className="p-3 rounded-xl bg-white border border-rose-200/80 shadow-2xs">
+                  Защитный щит желательно активировать ещё в пятницу вечером. Во время КвК вашу крепость может атаковать не только дуэльный соперник, но и любые другие игроки вражеского королевства.
+                </p>
+                <p className="p-3 rounded-xl bg-white border border-rose-200/80 shadow-2xs">
+                  Помните: после вашей собственной атаки щит автоматически снимается и включается режим <strong>«боевого безумия»</strong>. Он длится <strong>15 минут</strong>. Если в течение этого времени вы не совершите новых атак, режим спадет и вы снова сможете надеть щит. В этот опасный период лучше сразу телепортироваться в безопасную точку — подальше от места сбора альянса. Возвращаться на территорию своего альянса рекомендуется только после того, как вы снова будете под защитой щита.
+                </p>
+                <p className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-950 font-medium shadow-2xs">
+                  В сумке всегда должен быть запас из щитов и нескольких телепортов. Бесплатного 8-часового щита обычно не хватает, чтобы перекрыть весь опасный период события.
+                </p>
+              </div>
             </div>
           </div>
         )}
