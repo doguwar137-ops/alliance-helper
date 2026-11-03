@@ -416,11 +416,11 @@ export const GearRoadmapGuide: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2.5 w-full lg:w-auto">
+        <div className="grid grid-cols-1 sm:flex sm:flex-wrap items-center gap-2 sm:gap-2.5 w-full lg:w-auto">
           {completedSteps.length > 0 && (
             <button
               onClick={resetProgress}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 transition-all cursor-pointer"
+              className="flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 transition-all cursor-pointer w-full sm:w-auto"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span>Сбросить ({completedSteps.length}/27)</span>
@@ -429,7 +429,7 @@ export const GearRoadmapGuide: React.FC = () => {
 
           <button
             onClick={handleCopyFull}
-            className={`flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs ${
+            className={`flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs w-full sm:w-auto ${
               copiedFull
                 ? "bg-emerald-600 text-white border-emerald-600"
                 : "bg-amber-600 hover:bg-amber-700 text-white border-amber-600"
@@ -450,7 +450,7 @@ export const GearRoadmapGuide: React.FC = () => {
 
           <button
             onClick={handleCopyChat}
-            className={`flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs ${
+            className={`flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs w-full sm:w-auto ${
               copiedChat
                 ? "bg-emerald-50 text-emerald-800 border-emerald-300"
                 : "bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-300"
@@ -472,9 +472,9 @@ export const GearRoadmapGuide: React.FC = () => {
       </div>
 
       {/* Filter Pills */}
-      <div className="flex flex-wrap items-center justify-between gap-3 bg-white border border-slate-200 rounded-2xl px-4 py-3.5 shadow-2xs">
-        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-          <span className="flex items-center gap-1.5 text-xs font-bold text-slate-500 mr-1">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white border border-slate-200 rounded-2xl px-3.5 sm:px-4 py-3 sm:py-3.5 shadow-2xs">
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar pb-0.5 sm:pb-0">
+          <span className="hidden sm:flex items-center gap-1.5 text-xs font-bold text-slate-500 mr-1 shrink-0">
             <Filter className="w-3.5 h-3.5" />
             Фильтр по героям:
           </span>
@@ -487,7 +487,7 @@ export const GearRoadmapGuide: React.FC = () => {
             <button
               key={f.id}
               onClick={() => setHeroFilter(f.id)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                 heroFilter === f.id
                   ? "bg-amber-600 text-white shadow-2xs"
                   : "bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200"
@@ -498,7 +498,7 @@ export const GearRoadmapGuide: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-2 text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl">
+        <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl shrink-0">
           <CheckCircle2 className="w-4 h-4 text-emerald-600" />
           <span>Выполнено: {completedSteps.length} из 27</span>
         </div>

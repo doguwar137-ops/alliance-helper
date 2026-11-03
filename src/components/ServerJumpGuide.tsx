@@ -74,7 +74,7 @@ export const ServerJumpGuide: React.FC = () => {
     setLinkText(`🎯 РАЗВЕДКА СЕРВЕРА ${cleanServer} (${cleanX}:${cleanY}) >`);
   };
 
-  const fullOfficerMemo = `🌍 КАК ПЕРЕЙТИ НА ЛЮБОЙ СЕРВЕР | СКРЫТАЯ МЕХАНИКА (ТОЛЬКО R4/R5)
+  const fullOfficerMemo = `🌍 КАК ПЕРЕЙТИ НА ЛЮБОЙ СЕРВЕР | СКРЫТАЯ МЕХАНИКА
 
 🔗 ШАБЛОН ДЛЯ УВЕДОМЛЕНИЯ АЛЬЯНСА:
 ${generatedTag}
@@ -91,7 +91,7 @@ ${generatedTag}
 
 3. Где публиковать:
    СТРОГО в меню «Альянс» -> «Уведомление альянса»! 
-   Публиковать могут только R4 и R5. В обычном чате ссылка НЕ кликается.`;
+   В обычном чате ссылка НЕ кликается.`;
 
   const handleCopyMemo = () => {
     navigator.clipboard.writeText(fullOfficerMemo);
@@ -101,14 +101,14 @@ ${generatedTag}
 
   return (
     <div id="server-jump-guide-container" className="space-y-6">
-      {/* Officer Hero Banner */}
+      {/* Hero Banner */}
       <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-2xs relative overflow-hidden">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
           <div className="space-y-2 max-w-3xl">
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider">
                 <Crown className="w-3.5 h-3.5 text-amber-600" />
-                ТОЛЬКО ДЛЯ РУКОВОДСТВА (R4 / R5)
+                УЧАСТНИК
               </span>
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs font-semibold">
                 <Send className="w-3 h-3 text-indigo-600" />
@@ -124,7 +124,7 @@ ${generatedTag}
             </h1>
 
             <p className="text-sm text-slate-600 leading-relaxed">
-              Секретная конструкция ссылок для офицеров R4 и лидера R5. Позволяет создавать интерактивные кликабельные кнопки прямо в <strong className="text-slate-900">Уведомлении Альянса</strong>, чтобы участники клана могли в один клик перенести карту на любой выбранный сервер и заданные координаты.
+              Секретная конструкция ссылок для участников и лидера R5. Позволяет создавать интерактивные кликабельные кнопки прямо в <strong className="text-slate-900">Уведомлении Альянса</strong>, чтобы участники клана могли в один клик перенести карту на любой выбранный сервер и заданные координаты.
             </p>
           </div>
 
@@ -140,25 +140,25 @@ ${generatedTag}
             ) : (
               <>
                 <Copy className="w-4 h-4 text-white" />
-                <span>Скопировать инструкцию для R4 / R5</span>
+                <span>Скопировать инструкцию</span>
               </>
             )}
           </button>
         </div>
       </div>
 
-      {/* R4 / R5 Access Constraint Warning */}
+      {/* Access Constraint Warning */}
       <div className="rounded-2xl bg-amber-50 border-2 border-amber-400/80 p-4 sm:p-5 shadow-2xs space-y-2">
         <div className="flex items-center gap-2.5 text-amber-950 font-extrabold text-sm sm:text-base">
           <Lock className="w-5 h-5 text-amber-700 flex-shrink-0" />
-          <span>Критическое ограничение: Доступно ТОЛЬКО офицерам R4 и лидеру R5</span>
+          <span>Важное правило: Работает ТОЛЬКО в «Уведомлении альянса»</span>
         </div>
         <p className="text-xs sm:text-sm text-amber-900 leading-relaxed">
-          Тег <code className="font-mono bg-white px-2 py-0.5 rounded border border-amber-300 text-amber-950 font-bold">&lt;link=X&amp;Y&amp;Server&gt;Текст&lt;/link&gt;</code> обрабатывается игрой <strong>ИСКЛЮЧИТЕЛЬНО в поле «Уведомление альянса»</strong>. В обычном глобальном чате или чате альянса ссылка блокируется и отображается как простой некликабельный текст. Поскольку публиковать уведомления альянса могут только R4/R5, этот инструмент является секретным офицерским навигатором.
+          Тег <code className="font-mono bg-white px-2 py-0.5 rounded border border-amber-300 text-amber-950 font-bold">&lt;link=X&amp;Y&amp;Server&gt;Текст&lt;/link&gt;</code> обрабатывается игрой <strong>ИСКЛЮЧИТЕЛЬНО в поле «Уведомление альянса»</strong>. В обычном глобальном чате или чате альянса ссылка блокируется и отображается как простой некликабельный текст.
         </p>
       </div>
 
-      {/* Interactive Link Generator for Officers */}
+      {/* Interactive Link Generator */}
       <div className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
           <div className="flex items-center gap-3">
@@ -168,7 +168,7 @@ ${generatedTag}
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-[11px] font-mono font-extrabold px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 border border-indigo-200">
-                  ИНСТРУМЕНТ ОФИЦЕРА
+                  УЧАСТНИК
                 </span>
                 <span className="text-xs text-indigo-700 font-bold">ГЕНЕРАТОР ТЕГА</span>
               </div>
@@ -365,7 +365,7 @@ ${generatedTag}
               </h3>
             </div>
             <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-              Офицер R4 или лидер R5 открывает:
+              Участник или лидер R5 открывает:
               <br />
               <strong>Меню «Альянс»</strong> ➔ <strong>«Уведомление альянса»</strong>.
             </p>
@@ -439,7 +439,7 @@ ${generatedTag}
             </li>
             <li className="flex items-start gap-2">
               <span className="text-rose-600 font-bold">•</span>
-              <span><strong>Доступ R4 / R5:</strong> создавать и редактировать уведомления могут только офицеры и лидер.</span>
+              <span><strong>Доступ:</strong> создавать и редактировать уведомления могут участник и лидер.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-rose-600 font-bold">•</span>

@@ -68,29 +68,44 @@ ${currentDay.phaseName}
     currentDay.falconRule.action === "CLAIM_PREVIOUS" ||
     currentDay.falconRule.action === "CLAIM_ALL";
 
+  const shortDayLabels = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
+
   return (
-    <div id="today-directive-container" className="space-y-6">
-      {/* Day Selector Pills */}
-      <div className="flex flex-wrap items-center gap-1.5 pb-1">
+    <div id="today-directive-container" className="space-y-4 sm:space-y-6">
+      {/* Day Selector Pills: 7-column compact single row on mobile, full pills on sm+ */}
+      <div className="grid grid-cols-7 gap-1 sm:flex sm:flex-wrap sm:items-center sm:gap-1.5 pb-1">
         {DUEL_DAYS.map((day, idx) => {
           const isSelected = selectedDayIndex === idx;
+          const isFalconDay =
+            day.id === "monday" || day.id === "wednesday" || day.id === "friday";
           return (
             <button
               key={day.id}
               id={`day-tab-${day.id}`}
               onClick={() => setSelectedDayIndex(idx)}
-              className={`px-3 sm:px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
+              className={`relative px-1.5 sm:px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 cursor-pointer ${
                 isSelected
-                  ? "bg-amber-600 text-white shadow-xs scale-[1.01]"
+                  ? "bg-amber-600 text-white shadow-xs sm:scale-[1.01]"
                   : "bg-white hover:bg-slate-100 text-slate-700 hover:text-slate-900 border border-slate-200 shadow-2xs"
               }`}
             >
-              <span className="opacity-70">Д{idx + 1}</span>
-              <span>{day.name}</span>
-              {day.id === "monday" || day.id === "wednesday" || day.id === "friday" ? (
-                <span className="text-[10px] px-1 py-0.2 rounded bg-emerald-100 text-emerald-800 border border-emerald-300 font-semibold">
-                  Сокол
-                </span>
+              <span className="text-[10px] sm:text-xs opacity-75">Д{idx + 1}</span>
+              <span className="sm:hidden text-[11px] font-extrabold leading-tight">
+                {shortDayLabels[idx]}
+              </span>
+              <span className="hidden sm:inline">{day.name}</span>
+              {isFalconDay ? (
+                <>
+                  <span
+                    className={`sm:hidden w-1.5 h-1.5 rounded-full ${
+                      isSelected ? "bg-emerald-200" : "bg-emerald-500"
+                    }`}
+                    title="День сдачи Сокола"
+                  />
+                  <span className="hidden sm:inline-block text-[10px] px-1 py-0.2 rounded bg-emerald-100 text-emerald-800 border border-emerald-300 font-semibold">
+                    Сокол
+                  </span>
+                </>
               ) : null}
             </button>
           );
@@ -98,10 +113,10 @@ ${currentDay.phaseName}
       </div>
 
       {/* Main Tactical Directive Card */}
-      <div className="relative rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-2xs overflow-hidden">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-200 pb-5">
+      <div className="relative rounded-2xl bg-white border border-slate-200 p-3.5 sm:p-6 shadow-2xs overflow-hidden">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-200 pb-4 sm:pb-5">
           <div>
-            <div className="flex items-center gap-2.5 mb-1.5 flex-wrap">
+            <div className="flex items-center gap-2 mb-1.5 flex-wrap">
               <span className="px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold font-mono tracking-wide">
                 ФАЗА {currentDay.phaseNumber} ИЗ 7
               </span>
@@ -109,20 +124,20 @@ ${currentDay.phaseName}
                 {currentDay.badge}
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
               {currentDay.name}: {currentDay.phaseName}
             </h2>
-            <p className="text-sm text-slate-600 mt-1 max-w-3xl">
+            <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-3xl">
               {currentDay.focus}
             </p>
           </div>
 
           {/* Action buttons */}
-          <div className="flex items-center gap-2.5 flex-wrap">
+          <div className="grid grid-cols-1 sm:flex sm:items-center gap-2 sm:gap-2.5 w-full lg:w-auto">
             <button
               id="copy-order-btn"
               onClick={handleCopyOrder}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 transition-colors shadow-2xs cursor-pointer"
+              className="flex items-center justify-center gap-2 px-3.5 py-2.5 sm:py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 transition-colors shadow-2xs cursor-pointer w-full sm:w-auto"
             >
               {copiedMail ? (
                 <>
@@ -139,7 +154,7 @@ ${currentDay.phaseName}
             <button
               id="copy-order-chat-btn"
               onClick={handleCopyOrderChat}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-800 text-xs font-bold border border-slate-300 transition-colors shadow-2xs cursor-pointer"
+              className="flex items-center justify-center gap-2 px-3.5 py-2.5 sm:py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-800 text-xs font-bold border border-slate-300 transition-colors shadow-2xs cursor-pointer w-full sm:w-auto"
             >
               {copiedChat ? (
                 <>
@@ -157,28 +172,28 @@ ${currentDay.phaseName}
         </div>
 
         {/* Falcon Rules Hero Alert */}
-        <div className="mt-5">
+        <div className="mt-4 sm:mt-5">
           <div
-            className={`rounded-xl p-4 sm:p-5 border transition-all ${
+            className={`rounded-xl p-3.5 sm:p-5 border transition-all ${
               isFalconClaimDay
                 ? "bg-emerald-50 border-emerald-200 text-emerald-900 shadow-2xs"
                 : "bg-rose-50 border-rose-200 text-rose-900 shadow-2xs"
             }`}
           >
-            <div className="flex items-start gap-3.5">
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-3.5">
               <div
-                className={`p-2.5 rounded-lg flex-shrink-0 ${
+                className={`p-2 sm:p-2.5 rounded-lg flex-shrink-0 ${
                   isFalconClaimDay ? "bg-emerald-200 text-emerald-800" : "bg-rose-200 text-rose-800"
                 }`}
               >
                 {isFalconClaimDay ? (
-                  <CheckCircle2 className="w-6 h-6 text-emerald-700" />
+                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-700" />
                 ) : (
-                  <Lock className="w-6 h-6 text-rose-700" />
+                  <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-rose-700" />
                 )}
               </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
                   <span
                     className={`text-[11px] font-extrabold uppercase px-2 py-0.5 rounded tracking-wide font-mono ${
                       isFalconClaimDay
@@ -351,7 +366,7 @@ ${currentDay.phaseName}
             </div>
             <button
               onClick={onOpenSanctuary}
-              className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+              className="w-full sm:w-auto justify-center px-4 py-2.5 sm:py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
             >
               <span>Таблица прокачки</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -361,7 +376,7 @@ ${currentDay.phaseName}
 
         {/* Saturday Special Banner: Shields and Teleportation */}
         {currentDay.id === "saturday" && (
-          <div className="mt-4 p-5 rounded-xl bg-rose-50/70 border border-rose-200 text-slate-900 shadow-2xs space-y-3.5">
+          <div className="mt-4 p-4 sm:p-5 rounded-xl bg-rose-50/70 border border-rose-200 text-slate-900 shadow-2xs space-y-3.5">
             <div className="flex items-center gap-3 border-b border-rose-200 pb-3">
               <div className="p-2.5 rounded-xl bg-rose-100 border border-rose-200 text-rose-700 flex-shrink-0">
                 <ShieldAlert className="w-5 h-5 text-rose-600" />
@@ -395,8 +410,8 @@ ${currentDay.phaseName}
 
         {/* Ministers Guide Banner (Highlighted especially on Tuesday & Wednesday) */}
         {onOpenMinisters && (
-          <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
-            <div className="flex items-center gap-3">
+          <div className="mt-4 p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+            <div className="flex items-start sm:items-center gap-3">
               <div className="p-2.5 rounded-xl bg-amber-100 text-amber-700 border border-amber-200 flex-shrink-0">
                 <Crown className="w-5 h-5" />
               </div>
@@ -423,7 +438,7 @@ ${currentDay.phaseName}
             </div>
             <button
               onClick={onOpenMinisters}
-              className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+              className="w-full sm:w-auto justify-center px-4 py-2.5 sm:py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
             >
               <span>Инструкция (4 шага)</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -433,8 +448,8 @@ ${currentDay.phaseName}
 
         {/* Gear Upgrade Roadmap Banner */}
         {onOpenGearRoadmap && (
-          <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
-            <div className="flex items-center gap-3">
+          <div className="mt-4 p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+            <div className="flex items-start sm:items-center gap-3">
               <div className="p-2.5 rounded-xl bg-amber-100 border border-amber-200 text-amber-700 flex-shrink-0">
                 <Sparkles className="w-5 h-5" />
               </div>
@@ -454,7 +469,7 @@ ${currentDay.phaseName}
             </div>
             <button
               onClick={onOpenGearRoadmap}
-              className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+              className="w-full sm:w-auto justify-center px-4 py-2.5 sm:py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
             >
               <span>Открыть карту снаряжения</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -464,8 +479,8 @@ ${currentDay.phaseName}
 
         {/* Era of Revival Season Guide Banner */}
         {onOpenEraRevival && (
-          <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
-            <div className="flex items-center gap-3">
+          <div className="mt-4 p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+            <div className="flex items-start sm:items-center gap-3">
               <div className="p-2.5 rounded-xl bg-indigo-100 border border-indigo-200 text-indigo-700 flex-shrink-0">
                 <Flame className="w-5 h-5" />
               </div>
@@ -485,7 +500,7 @@ ${currentDay.phaseName}
             </div>
             <button
               onClick={onOpenEraRevival}
-              className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+              className="w-full sm:w-auto justify-center px-4 py-2.5 sm:py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
             >
               <span>Гайд по Эре</span>
               <ArrowRight className="w-3.5 h-3.5" />

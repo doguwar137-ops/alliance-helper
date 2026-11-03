@@ -77,10 +77,10 @@ export const AllianceRules: React.FC = () => {
           </div>
 
           {/* Quick Action Buttons */}
-          <div className="flex flex-wrap items-center gap-2.5 w-full lg:w-auto flex-shrink-0">
+          <div className="grid grid-cols-1 sm:flex sm:flex-wrap items-center gap-2 sm:gap-2.5 w-full lg:w-auto flex-shrink-0">
             <button
               onClick={handleCopyNewbieMemo}
-              className="px-3.5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs transition-all shadow-2xs flex items-center justify-center gap-2 cursor-pointer border border-amber-600"
+              className="px-3.5 py-2.5 sm:py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs transition-all shadow-2xs flex items-center justify-center gap-2 cursor-pointer border border-amber-600 w-full sm:w-auto"
             >
               {copiedMemo ? (
                 <>
@@ -97,7 +97,7 @@ export const AllianceRules: React.FC = () => {
             <button
               type="button"
               onClick={() => setShowMemoPreview((prev) => !prev)}
-              className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-2xs"
+              className="px-3.5 py-2.5 sm:py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-2xs w-full sm:w-auto"
             >
               <Eye className="w-3.5 h-3.5 text-slate-500" />
               <span>{showMemoPreview ? "Скрыть текст памятки" : "Посмотреть текст памятки"}</span>
@@ -107,8 +107,8 @@ export const AllianceRules: React.FC = () => {
 
         {/* Memo Full Preview Card */}
         {showMemoPreview && (
-          <div className="relative z-10 p-5 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 shadow-2xs">
-            <div className="flex items-center justify-between gap-3 mb-3 pb-3 border-b border-slate-200">
+          <div className="relative z-10 p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 shadow-2xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3 pb-3 border-b border-slate-200">
               <div className="flex items-center gap-2">
                 <span className="p-1.5 rounded-lg bg-amber-100 text-amber-800 font-bold text-sm">📋</span>
                 <div>
@@ -122,13 +122,13 @@ export const AllianceRules: React.FC = () => {
               </div>
               <button
                 onClick={handleCopyNewbieMemo}
-                className="px-3.5 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow-2xs transition-all"
+                className="px-3.5 py-2 sm:py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs transition-all w-full sm:w-auto"
               >
                 {copiedMemo ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedMemo ? "Скопировано!" : "Скопировать"}</span>
               </button>
             </div>
-            <pre className="whitespace-pre-wrap font-sans text-xs sm:text-sm text-slate-700 leading-relaxed bg-white p-4 rounded-xl border border-slate-200 select-all">
+            <pre className="whitespace-pre-wrap font-sans text-xs sm:text-sm text-slate-700 leading-relaxed bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 select-all">
               {memoText}
             </pre>
           </div>
@@ -136,7 +136,7 @@ export const AllianceRules: React.FC = () => {
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
         {[
           { id: "all", label: "Все Правила" },
           { id: "garrison", label: "🛡️ Оборона и Галочки", badge: "ВАЖНО" },
@@ -152,9 +152,9 @@ export const AllianceRules: React.FC = () => {
             <button
               key={tab.id}
               onClick={() => setActiveFilter(tab.id)}
-              className={`flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`whitespace-nowrap shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
                 isActive
-                  ? "bg-amber-600 text-white shadow-xs scale-[1.01]"
+                  ? "bg-amber-600 text-white shadow-xs"
                   : "bg-white hover:bg-slate-100 text-slate-700 hover:text-slate-900 border border-slate-200 shadow-2xs"
               }`}
             >

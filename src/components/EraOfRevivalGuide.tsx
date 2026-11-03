@@ -182,12 +182,12 @@ export const EraOfRevivalGuide: React.FC = () => {
         </div>
 
         {/* Filter Bar */}
-        <div className="flex flex-wrap items-center gap-1.5">
+        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5 sm:flex-wrap">
           {filterButtons.map((btn) => (
             <button
               key={btn.id}
               onClick={() => setActiveSection(btn.id)}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`whitespace-nowrap shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 activeSection === btn.id
                   ? "bg-amber-600 text-white shadow-xs"
                   : "bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200"

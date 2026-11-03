@@ -15,6 +15,8 @@ import {
   Play,
   ShieldCheck,
   Calendar,
+  Sprout,
+  Swords,
 } from "lucide-react";
 
 export const MinistersGuide: React.FC = () => {
@@ -23,7 +25,7 @@ export const MinistersGuide: React.FC = () => {
 
   const fullTextForCopy = `🏛️ ГАЙД ПО МИНИСТРАМ В LAST ASYLUM
 
-Министры нужны для одной цели — дать мощный бафф к скорости (ускорение) перед тем, как вы запустите долгую стройку или исследование технологий.
+Министры нужны для одной цели — дать мощный бафф к скорости (ускорение) перед тем, как вы запустите долгую стройку, исследование технологий, обучение войск или сбор ресурсов (зерна, древесины, травы).
 
 ⚙️ Как устроена механика на сервере:
 • Жесткий таймер на 5 минут: Как только очередь доходит до вас, игра автоматически выдает вам должность ровно на 5 минут. За это время нужно успеть запустить процесс. По истечении 5 минут система сама снимет вас с поста.
@@ -35,26 +37,28 @@ export const MinistersGuide: React.FC = () => {
 Шаг 1: Полная готовность (ДО подачи заявки)
 Вставать в автоматическую очередь неподготовленным нельзя — вы потратите свои 5 минут впустую и заблокируете других игроков.
 1. Зайдите в замок и проверьте ресурсы. Если их мало — вскройте сундуки из рюкзака прямо сейчас.
-2. Освободите строителя или Лабораторию.
+2. Освободите строителя, Лабораторию или казармы.
 
 Шаг 2: Вход в очередь
 1. Нажмите на свою Аватарку в левом верхнем углу экрана.
 2. Нажмите на плашку с номером вашего сервера (например, #304).
-3. В Кабинете Министров выберите нужную иконку и нажмите «Подать заявку».
+3. В Зале Министров выберите нужную иконку и нажмите «Подать заявку».
 
 Шаг 3: Получение баффа и запуск
 1. Ждите, пока система автоматически назначит вас министром.
-2. Как только должность получена, у вас есть 5 минут. Мгновенно заходите в замок, открывайте объект и нажимайте кнопку «Улучшить» или «Исследовать».
-3. Запущенный процесс получит мощное ускорение к базовой скорости (например, +50% для стройки или +25% для науки).
+2. Как только должность получена, у вас есть 5 минут. Мгновенно заходите в замок, открывайте объект и нажимайте кнопку «Улучшить», «Исследовать» или запускайте обучение / сбор.
+3. Запущенный процесс получит мощное ускорение к базовой скорости (например, +50% для стройки, +25% для науки, ускорение обучения войск или сбора ресурсов).
 
 Шаг 4: Спокойная прокачка
-Вам больше не нужно никуда заходить и ничего нажимать. Через 5 минут игра сама заберет у вас титул и передаст следующему игроку. Бафф уже зафиксирован за вашей постройкой. Теперь вы можете спокойно использовать личные ускорители времени из рюкзака или алмазы, чтобы завершить таймер.
+Вам больше не нужно никуда заходить и ничего нажимать. Через 5 минут игра сама заберет у вас титул и передаст следующему игроку. Бафф уже зафиксирован за вашим процессом. Теперь вы можете спокойно использовать личные ускорители времени из рюкзака или алмазы, чтобы завершить таймер.
 
-📅 Памятка по дням Дуэли Альянсов (SVS):
+📅 Памятка по дням и должностям (SVS):
+• Каждый день (по несколько раз в день): Министр Двора — можно и нужно запускать каждый день по несколько раз! Дает мощное ускорение на сбор зерна, древесины и травы.
 • Вторник (День Стройки): Подаем заявки на Министра Строительства (+50% к скорости).
-• Среда (День Науки): Подаем заявки на Министра Исследований (+25% к скорости) или Министра Развития.`;
+• Среда (День Науки): Подаем заявки на Министра Исследований (+25% к скорости) или Министра Развития.
+• Пятница (День Войск): Идеально брать Министра Обучения перед массовой тренировкой и повышением войск в казармах.`;
 
-  const shortChatText = `🏛️ МИНИСТРЫ: Перед запуском долгой стройки или науки берите бафф Министра (Аватарка -> #Сервер -> Кабинет Министров)! 1) ДО заявки приготовьте ресы и свободного строителя/лабу. 2) Должность дается ровно на 5 мин (КД 30 мин, отмена заявки — крестик ✕). 3) ВТ — Министр Строительства (+50%), СР — Министр Исследований (+25%)!`;
+  const shortChatText = `🏛️ МИНИСТРЫ: Берите бафф Министра (Аватарка -> #Сервер -> Зал Министров)! 1) ДО заявки приготовьте ресы и свободного строителя/лабу/казарму. 2) Должность дается на 5 мин (КД 30 мин, отмена — крестик ✕). 3) КАЖДЫЙ ДЕНЬ по несколько раз — Министр Двора (ускорение сбора зерна, древесины, травы), ВТ — Министр Строительства (+50%), СР — Министр Исследований (+25%), ПТ — Министр Обучения (войска)!`;
 
   const handleCopyFull = () => {
     navigator.clipboard.writeText(fullTextForCopy);
@@ -76,7 +80,7 @@ export const MinistersGuide: React.FC = () => {
           <div className="max-w-3xl space-y-2">
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider">
               <Crown className="w-4 h-4 text-amber-600" />
-              <span>Серверные Баффы • Кабинет Министров</span>
+              <span>Серверные Баффы • Зал Министров</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
               Гайд по министрам в Last Asylum
@@ -86,15 +90,15 @@ export const MinistersGuide: React.FC = () => {
               <span className="text-amber-700 font-bold">
                 дать мощный бафф к скорости (ускорение)
               </span>{" "}
-              перед тем, как вы запустите долгую стройку или исследование технологий.
+              перед тем, как вы запустите долгую стройку, исследование технологий, обучение войск или сбор ресурсов (зерна, древесины, травы).
             </p>
           </div>
 
           {/* Copy Buttons */}
-          <div className="flex flex-wrap items-center gap-2.5 flex-shrink-0">
+          <div className="grid grid-cols-1 sm:flex sm:flex-wrap items-center gap-2 sm:gap-2.5 w-full lg:w-auto flex-shrink-0">
             <button
               onClick={handleCopyFull}
-              className={`flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs ${
+              className={`flex items-center justify-center gap-2 px-3.5 py-2.5 sm:py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs w-full sm:w-auto ${
                 copiedFull
                   ? "bg-emerald-600 text-white border-emerald-600"
                   : "bg-amber-600 hover:bg-amber-700 text-white border-amber-600"
@@ -115,7 +119,7 @@ export const MinistersGuide: React.FC = () => {
 
             <button
               onClick={handleCopyChat}
-              className={`flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs ${
+              className={`flex items-center justify-center gap-2 px-3.5 py-2.5 sm:py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border shadow-2xs w-full sm:w-auto ${
                 copiedChat
                   ? "bg-emerald-50 text-emerald-800 border-emerald-300"
                   : "bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-300"
@@ -292,7 +296,7 @@ export const MinistersGuide: React.FC = () => {
                   3
                 </span>
                 <span>
-                  В <strong>Кабинете Министров</strong> выберите нужную иконку и нажмите <strong>«Подать заявку»</strong>.
+                  В <strong>Зале Министров</strong> выберите нужную иконку и нажмите <strong>«Подать заявку»</strong>.
                 </span>
               </li>
             </ol>
@@ -364,12 +368,35 @@ export const MinistersGuide: React.FC = () => {
               📅 Памятка по дням Дуэли Альянсов (SVS)
             </h2>
             <p className="text-xs text-slate-600">
-              В какие дни недели какую должность брать для максимума очков и экономии ускорений
+              В какие дни недели какую должность брать для максимума очков, ресурсов и экономии ускорений
             </p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Every Day - Minister of the Court */}
+          <div className="rounded-2xl bg-white border-2 border-emerald-300 p-4 sm:p-5 flex items-start gap-3.5 shadow-2xs">
+            <div className="p-3 rounded-2xl bg-emerald-100 text-emerald-700 border border-emerald-200 flex-shrink-0">
+              <Sprout className="w-6 h-6" />
+            </div>
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-xs font-black uppercase px-2.5 py-0.5 rounded-md bg-emerald-600 text-white">
+                  Каждый день • По несколько раз
+                </span>
+                <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md border border-emerald-200">
+                  Зерно • Древесина • Трава
+                </span>
+              </div>
+              <h3 className="text-base font-extrabold text-slate-900 pt-1">
+                Министр Двора
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600">
+                Можно и нужно запускать <strong>каждый день по несколько раз</strong>! Дает отличное ускорение на <strong>сбор зерна, древесины и травы</strong>.
+              </p>
+            </div>
+          </div>
+
           {/* Tuesday */}
           <div className="rounded-2xl bg-white border-2 border-amber-300 p-4 sm:p-5 flex items-start gap-3.5 shadow-2xs">
             <div className="p-3 rounded-2xl bg-amber-100 text-amber-700 border border-amber-200 flex-shrink-0">
@@ -412,6 +439,29 @@ export const MinistersGuide: React.FC = () => {
               </h3>
               <p className="text-xs sm:text-sm text-slate-600">
                 Подаем заявки на <strong>Министра Исследований (+25% к скорости)</strong> или <strong>Министра Развития</strong> перед стартом долгих технологий в Лаборатории.
+              </p>
+            </div>
+          </div>
+
+          {/* Friday - Minister of Training */}
+          <div className="rounded-2xl bg-white border-2 border-rose-300 p-4 sm:p-5 flex items-start gap-3.5 shadow-2xs">
+            <div className="p-3 rounded-2xl bg-rose-100 text-rose-700 border border-rose-200 flex-shrink-0">
+              <Swords className="w-6 h-6" />
+            </div>
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-xs font-black uppercase px-2.5 py-0.5 rounded-md bg-rose-600 text-white">
+                  Пятница • День Войск
+                </span>
+                <span className="text-xs font-extrabold text-rose-700 bg-rose-100 px-2 py-0.5 rounded-md border border-rose-200">
+                  Ускорение казарм
+                </span>
+              </div>
+              <h3 className="text-base font-extrabold text-slate-900 pt-1">
+                Министр Обучения
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600">
+                Идеально брать <strong>по пятницам</strong> перед массовой тренировкой и повышением уровня войск в казармах, чтобы сэкономить максимум ускорений обучения.
               </p>
             </div>
           </div>

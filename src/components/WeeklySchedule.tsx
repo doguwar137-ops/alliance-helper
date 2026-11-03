@@ -201,6 +201,15 @@ ${day.tips.map((t) => `- ${t}`).join("\n")}`;
                       <span className="text-[11px] px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200 font-medium">
                         {day.badge}
                       </span>
+                      <span
+                        className={`sm:hidden inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded font-bold font-mono ${
+                          isClaimDay
+                            ? "bg-emerald-50 text-emerald-800 border border-emerald-300"
+                            : "bg-rose-50 text-rose-800 border border-rose-200"
+                        }`}
+                      >
+                        {isClaimDay ? "🦅 СДАЧА" : "🔒 КОПИМ"}
+                      </span>
                     </div>
                     <p className="text-xs text-slate-600 mt-0.5 truncate max-w-xl">
                       {day.focus}
@@ -335,16 +344,16 @@ ${day.tips.map((t) => `- ${t}`).join("\n")}`;
                   )}
 
                   {/* Footer actions */}
-                  <div className="flex items-center justify-between pt-3 border-t border-slate-200 flex-wrap gap-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between pt-3 border-t border-slate-200 gap-3">
                     <div className="text-xs text-slate-600">
                       <span className="font-semibold text-slate-800">Ускорители:</span>{" "}
                       {day.recommendedSpeedups.join(", ")}
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="grid grid-cols-1 sm:flex sm:items-center gap-2 w-full sm:w-auto">
                       <button
                         onClick={() => handleCopyDay(day)}
-                        className="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 transition-colors shadow-2xs flex items-center gap-1.5 cursor-pointer"
+                        className="justify-center px-3.5 py-2 sm:py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 transition-colors shadow-2xs flex items-center gap-1.5 cursor-pointer"
                       >
                         {copiedDayMailId === day.id ? (
                           <>
@@ -360,7 +369,7 @@ ${day.tips.map((t) => `- ${t}`).join("\n")}`;
                       </button>
                       <button
                         onClick={() => handleCopyDayChat(day)}
-                        className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 text-xs font-bold border border-slate-300 transition-colors shadow-2xs flex items-center gap-1.5 cursor-pointer"
+                        className="justify-center px-3.5 py-2 sm:py-1.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 text-xs font-bold border border-slate-300 transition-colors shadow-2xs flex items-center gap-1.5 cursor-pointer"
                       >
                         {copiedDayChatId === day.id ? (
                           <>
@@ -376,7 +385,7 @@ ${day.tips.map((t) => `- ${t}`).join("\n")}`;
                       </button>
                       <button
                         onClick={() => onSelectDay(idx)}
-                        className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-300 transition-colors shadow-2xs"
+                        className="justify-center px-3.5 py-2 sm:py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold border border-amber-600 transition-colors shadow-2xs cursor-pointer"
                       >
                         Перейти в директиву дня
                       </button>
