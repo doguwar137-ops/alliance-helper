@@ -135,17 +135,24 @@ export const ShopsGuide: React.FC = () => {
             </div>
 
             <div className="space-y-2 text-xs sm:text-[13px]">
-              <div className="flex items-center gap-2">
-                <span className="font-mono font-bold text-amber-700 w-4 text-right">1.</span>
-                <span className="w-6 h-6 rounded bg-blue-50 border border-blue-200 flex items-center justify-center text-[11px]">📜</span>
-                <span className="text-slate-800 font-medium">Чертёж снаряжения (UR)</span>
-                <span className="text-slate-400">–</span>
-                <span className="text-amber-700 font-extrabold uppercase text-[11px] tracking-wide">ТОЛЬКО ЭТО!</span>
+              <div className="flex items-start gap-2">
+                <span className="font-mono font-bold text-amber-700 w-4 text-right pt-0.5">1.</span>
+                <span className="w-6 h-6 rounded bg-blue-50 border border-blue-200 flex items-center justify-center text-[11px] flex-shrink-0 mt-0.5">📜</span>
+                <div className="leading-snug">
+                  <div>
+                    <span className="text-slate-800 font-medium">Чертёж снаряжения (UR)</span>
+                    <span className="text-slate-400"> – </span>
+                    <span className="text-amber-700 font-extrabold uppercase text-[11px] tracking-wide">ТОЛЬКО ЭТО!</span>
+                  </div>
+                  <p className="text-xs text-slate-500 mt-0.5">
+                    Нужен для улучшения звёздности снаряжения
+                  </p>
+                </div>
               </div>
             </div>
 
             <div className="mt-4 pt-3 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
-              <strong className="text-slate-900">Примечание:</strong> ПОКУПАЙТЕ ТОЛЬКО ЭТО. Не тратьте очки на другие предметы.
+              <strong className="text-slate-900">Примечание:</strong> ПОКУПАЙТЕ ТОЛЬКО ЭТО. Чертёж необходим для повышения звёздности снаряжения — не тратьте очки на другие предметы.
             </div>
           </div>
         </div>
