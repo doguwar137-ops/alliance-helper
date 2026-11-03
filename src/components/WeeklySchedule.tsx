@@ -68,10 +68,7 @@ ${day.phaseName}
 ${day.allowedActions.map((a) => `- ${a}`).join("\n")}
 
 Дополнительно:
-${day.tips.map((t) => `- ${t}`).join("\n")}
-
-Строгий запрет:
-${day.forbiddenActions.map((f) => `- ${f}`).join("\n")}`;
+${day.tips.map((t) => `- ${t}`).join("\n")}`;
 
     navigator.clipboard.writeText(text);
     setCopiedDayMailId(day.id);
@@ -279,35 +276,19 @@ ${day.forbiddenActions.map((f) => `- ${f}`).join("\n")}`;
                     )}
                   </div>
 
-                  {/* Allowed / Forbidden grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                    <div className="p-3 rounded-xl bg-white border border-emerald-200 shadow-2xs">
-                      <div className="font-bold text-emerald-800 mb-2 flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Разрешено и рекомендуется:
-                      </div>
-                      <ul className="space-y-1 text-slate-700">
-                        {day.allowedActions.map((act, i) => (
-                          <li key={i} className="flex items-start gap-1.5">
-                            <span className="text-emerald-600 font-bold">•</span>
-                            <span>{act}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  {/* Allowed actions */}
+                  <div className="p-3.5 rounded-xl bg-white border border-emerald-200 shadow-2xs text-xs">
+                    <div className="font-bold uppercase tracking-wider text-emerald-800 mb-2 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Что ДЕЛАТЬ сегодня (Тратить / Качать):
                     </div>
-
-                    <div className="p-3 rounded-xl bg-white border border-rose-200 shadow-2xs">
-                      <div className="font-bold text-rose-800 mb-2 flex items-center gap-1.5">
-                        <AlertTriangle className="w-3.5 h-3.5 text-rose-600" /> Строго запрещено / Копим:
-                      </div>
-                      <ul className="space-y-1 text-slate-700">
-                        {day.forbiddenActions.map((act, i) => (
-                          <li key={i} className="flex items-start gap-1.5">
-                            <span className="text-rose-600 font-bold">-</span>
-                            <span>{act}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <ul className="space-y-1.5 text-slate-700">
+                      {day.allowedActions.map((act, i) => (
+                        <li key={i} className="flex items-start gap-1.5">
+                          <span className="text-emerald-600 font-bold">•</span>
+                          <span>{act}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
                   {/* Saturday Special Block: Shields and Teleportation */}

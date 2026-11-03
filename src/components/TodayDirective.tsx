@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   ShieldAlert,
   CheckCircle2,
-  XCircle,
   AlertTriangle,
   Flame,
   Copy,
@@ -48,8 +47,7 @@ export const TodayDirective: React.FC<TodayDirectiveProps> = ({
       `${currentDay.name.toUpperCase()}
 ${currentDay.phaseName}
 Главные задачи: ${currentDay.allowedActions.join(", ")}
-Дополнительно: ${currentDay.tips.join(", ")}
-Строгий запрет: ${currentDay.forbiddenActions.join(", ")}`;
+Дополнительно: ${currentDay.tips.join(", ")}`;
 
     navigator.clipboard.writeText(text);
     setCopiedMail(true);
@@ -495,9 +493,8 @@ ${currentDay.phaseName}
           </div>
         )}
 
-        {/* Two Column Grid: Allowed vs Forbidden Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
-          {/* Allowed Actions */}
+        {/* Allowed Actions */}
+        <div className="mt-5">
           <div className="rounded-xl bg-slate-50 border border-emerald-200 p-4 shadow-2xs">
             <div className="flex items-center gap-2 mb-3">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
@@ -512,27 +509,6 @@ ${currentDay.phaseName}
                   className="text-xs sm:text-sm text-slate-700 flex items-start gap-2"
                 >
                   <span className="text-emerald-600 font-bold mt-0.5">•</span>
-                  <span>{action}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Forbidden Actions */}
-          <div className="rounded-xl bg-slate-50 border border-rose-200 p-4 shadow-2xs">
-            <div className="flex items-center gap-2 mb-3">
-              <XCircle className="w-4 h-4 text-rose-600" />
-              <h4 className="text-xs font-bold uppercase tracking-wider text-rose-800">
-                СТРОГО ЗАПРЕЩЕНО (Копить / Не трогать):
-              </h4>
-            </div>
-            <ul className="space-y-2">
-              {currentDay.forbiddenActions.map((action, i) => (
-                <li
-                  key={i}
-                  className="text-xs sm:text-sm text-slate-700 flex items-start gap-2"
-                >
-                  <span className="text-rose-600 font-bold mt-0.5">-</span>
                   <span>{action}</span>
                 </li>
               ))}
