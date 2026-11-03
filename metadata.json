@@ -1,0 +1,6 @@
+{
+  "name": "Штаб Альянса [ZBS] — Last Asylum",
+  "description": "Официальный интерактивный штабной помощник альянса [ZBS] в Last Asylum: Plague. Расписание Дуэли альянсов, калькулятор очков, тактика отрядов и регламенты событий.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
