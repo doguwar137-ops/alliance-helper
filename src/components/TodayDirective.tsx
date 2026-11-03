@@ -491,11 +491,6 @@ ${currentDay.phaseName}
             </p>
           </div>
         </div>
-        <div className="text-right">
-          <span className="text-xs font-mono font-bold text-amber-900 px-2.5 py-1 rounded bg-white border border-amber-200 shadow-2xs">
-            Ежедневное участие строго обязательно
-          </span>
-        </div>
       </div>
     </div>
   );
