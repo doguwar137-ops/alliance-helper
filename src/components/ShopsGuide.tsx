@@ -145,7 +145,7 @@ export const ShopsGuide: React.FC = () => {
                     <span className="text-amber-700 font-extrabold uppercase text-[11px] tracking-wide">ТОЛЬКО ЭТО!</span>
                   </div>
                   <p className="text-xs text-slate-500 mt-0.5">
-                    Нужен для улучшения звёздности снаряжения
+                    Нужен для улучшения звёздности снаряжения.
                   </p>
                 </div>
               </div>
