@@ -189,7 +189,7 @@ export const ShopsGuide: React.FC = () => {
               <div className="flex items-center gap-2">
                 <span className="font-mono font-bold text-amber-700 w-5 text-right">3.</span>
                 <span className="w-6 h-6 rounded bg-purple-50 border border-purple-200 flex items-center justify-center text-[11px]">📦</span>
-                <span className="text-slate-800 font-medium">Сундучок снаряжения Ворона I ур.</span>
+                <span className="text-slate-800 font-medium">Сундук снаряжения Ворона I ур.</span>
                 <span className="text-slate-400">–</span>
                 <span className="text-sky-700 font-bold uppercase text-[11px] tracking-wide">ВАЖНО</span>
               </div>
@@ -322,7 +322,7 @@ export const ShopsGuide: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <span className="font-mono font-bold text-amber-700 w-4 text-right">3.</span>
                   <span className="w-6 h-6 rounded bg-purple-50 border border-purple-200 flex items-center justify-center text-[11px]">📦</span>
-                  <span className="text-slate-800 font-medium">Сундучок снаряжения Ворона III ур.</span>
+                  <span className="text-slate-800 font-medium">Сундук снаряжения Ворона III ур.</span>
                   <span className="text-slate-400">–</span>
                   <span className="text-sky-700 font-bold uppercase text-[11px] tracking-wide">ВАЖНО</span>
                 </div>
@@ -346,7 +346,7 @@ export const ShopsGuide: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <span className="font-mono font-bold text-amber-700 w-4 text-right">6.</span>
                   <span className="w-6 h-6 rounded bg-amber-50 border border-amber-200 flex items-center justify-center text-[11px]">🎫</span>
-                  <span className="text-slate-800 font-medium">Билет на вербовку</span>
+                  <span className="text-slate-800 font-medium">Билет призыва</span>
                   <span className="text-slate-400">–</span>
                   <span className="text-slate-500 font-medium uppercase text-[11px] tracking-wide">ПОЗЖЕ</span>
                 </div>
