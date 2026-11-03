@@ -14,6 +14,7 @@ import {
   FlaskConical,
   Castle,
   Crown,
+  Skull,
 } from "lucide-react";
 import { DUEL_DAYS } from "../data/allianceData";
 import { DuelDay } from "../types";
@@ -26,6 +27,7 @@ interface TodayDirectiveProps {
   onOpenGearRoadmap?: () => void;
   onOpenMinisters?: () => void;
   onOpenEraRevival?: () => void;
+  onOpenBlightBoss?: () => void;
 }
 
 export const TodayDirective: React.FC<TodayDirectiveProps> = ({
@@ -36,6 +38,7 @@ export const TodayDirective: React.FC<TodayDirectiveProps> = ({
   onOpenGearRoadmap,
   onOpenMinisters,
   onOpenEraRevival,
+  onOpenBlightBoss,
 }) => {
   const [copiedMail, setCopiedMail] = useState(false);
   const [copiedChat, setCopiedChat] = useState(false);
@@ -604,6 +607,37 @@ ${currentDay.phaseName}
           </button>
         )}
       </div>
+
+      {/* Blight Boss Quick Tactical Banner */}
+      {onOpenBlightBoss && (
+        <div className="rounded-xl bg-gradient-to-r from-purple-50 via-white to-amber-50 border border-purple-200 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-2xs">
+          <div className="flex items-start sm:items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-purple-100 border border-purple-200 text-purple-700 flex-shrink-0">
+              <Skull className="w-5 h-5 text-purple-600" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <h4 className="text-sm font-extrabold text-purple-950">
+                  Босс Скверны: как набить рекорд урона
+                </h4>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-purple-200/80 text-purple-900 border border-purple-300">
+                  ФИОЛЕТОВЫЕ ПЕРЧАТКИ 30 УР. НА САППОРТОВ
+                </span>
+              </div>
+              <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                Боевое безумие перед боем + облик Ворон + Эпиграфы по типу войск. Пачки: Клэр / Стелла / Эш + саппорты Белл (+40% к атаке) и Харпер с фиолетовыми перчатками 30 ур.!
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={onOpenBlightBoss}
+            className="w-full sm:w-auto justify-center px-4 py-2.5 sm:py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+          >
+            <span>Гайд по Боссу</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+      )}
 
       {/* Strict Cheese Trap Rules Reminder */}
       <div className="rounded-xl bg-gradient-to-r from-amber-50 via-white to-orange-50 border border-amber-200 p-4 flex items-center justify-between gap-4 flex-wrap shadow-2xs">

@@ -21,6 +21,7 @@ import {
   LayoutGrid,
   X,
   Check,
+  Skull,
 } from "lucide-react";
 import { Header } from "./components/Header";
 import { TodayDirective } from "./components/TodayDirective";
@@ -36,6 +37,7 @@ import { GearRoadmapGuide } from "./components/GearRoadmapGuide";
 import { MinistersGuide } from "./components/MinistersGuide";
 import { EraOfRevivalGuide } from "./components/EraOfRevivalGuide";
 import { GiftCodesGuide } from "./components/GiftCodesGuide";
+import { BlightBossGuide } from "./components/BlightBossGuide";
 import { GAME_TITLE } from "./data/allianceData";
 
 export default function App() {
@@ -52,6 +54,7 @@ export default function App() {
 
   const navTabs = [
     { id: "today", label: "Директива Дня", shortLabel: "Сегодня", icon: Shield, badge: "СЕГОДНЯ" },
+    { id: "blight-boss", label: "Босс Скверны", shortLabel: "Босс Скверны", icon: Skull, badge: "МАКС УРОН" },
     { id: "era-revival", label: "Эра Возрождения", shortLabel: "Эра", icon: Sparkles, badge: "СЕЗОН" },
     { id: "rules", label: "Правила Альянса", shortLabel: "Правила", icon: ShieldAlert, badge: "ВАЖНО" },
     { id: "ministers", label: "Гайд по Министрам", shortLabel: "Министры", icon: Crown, badge: "+50% БАФФ" },
@@ -153,8 +156,11 @@ export default function App() {
             onOpenGearRoadmap={() => handleSelectTab("gear-roadmap")}
             onOpenMinisters={() => handleSelectTab("ministers")}
             onOpenEraRevival={() => handleSelectTab("era-revival")}
+            onOpenBlightBoss={() => handleSelectTab("blight-boss")}
           />
         )}
+
+        {currentTab === "blight-boss" && <BlightBossGuide />}
 
         {currentTab === "era-revival" && <EraOfRevivalGuide />}
 
@@ -248,7 +254,7 @@ export default function App() {
             >
               <LayoutGrid className="w-5 h-5" />
             </div>
-            <span className="text-[10px] leading-none">Все (13)</span>
+            <span className="text-[10px] leading-none">Все ({navTabs.length})</span>
           </button>
         </div>
       </div>
