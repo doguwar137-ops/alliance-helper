@@ -31,7 +31,7 @@ export const AllianceRules: React.FC = () => {
 
   const memoText = `ПАМЯТКА ИГРОКА АЛЬЯНСА:
 1. ВЗНОСЫ В НАУКУ: каждый день! Меню Альянс -> Исследование альянса -> Вносить СТРОГО туда, где значок 👍 (палец вверх).
-2. ДУЭЛЬ АЛЬЯНСОВ: норматив минимум 2.000.000 очков в день от каждого! Закрывайте ежедневные этапы по графику.
+2. ДУЭЛЬ АЛЬЯНСОВ: обязательное участие каждого игрока! Закрывайте ежедневные этапы по графику.
 3. СОКОЛИНАЯ БАШНЯ: ОБЯЗАТЕЛЬНО отправляйте отряды на задания каждый день до появления КРАСНОГО КРУЖКА 🔴 (красный кружок означает, что задание выполнено). Заранее награды НЕ забираем — копим готовые задания до ПЯТНИЦЫ. В пятницу нажимаем «Забрать все», а если в течение всей пятницы появляются еще задания — обязательно их тоже выполняем и сразу забираем весь день ради очков Дуэли Альянсов!
 4. КАРАВАНЫ И СЕКРЕТКИ: грабим ТОЛЬКО чужие серверы! Обязательно галочка «Запретить караваны на этом сервере».
 5. МИР НА СЕРВЕРЕ: сжигать соседей нашего сервера КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО, даже если они вас ограбили!
@@ -64,9 +64,6 @@ export const AllianceRules: React.FC = () => {
               <span className="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 font-mono text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5">
                 <Shield className="w-3.5 h-3.5 text-amber-400" />
                 Официальные Правила Альянса
-              </span>
-              <span className="px-2.5 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-rose-300 font-mono text-xs font-bold">
-                Норматив Дуэли: 2 000 000 очков
               </span>
               <span className="px-2.5 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 font-mono text-xs font-bold flex items-center gap-1">
                 <ThumbsUp className="w-3 h-3 text-sky-400" /> Взносы по рекомендации 👍
@@ -149,7 +146,7 @@ export const AllianceRules: React.FC = () => {
           { id: "garrison", label: "🛡️ Оборона и Галочки", badge: "ВАЖНО" },
           { id: "falcon", label: "🦅 Соколиная Башня (🔴 Кружок)", badge: "ВАЖНО" },
           { id: "donations", label: "🧪 Взносы в науку (👍)", badge: "ОБЯЗАТЕЛЬНО" },
-          { id: "duel", label: "⚔️ Дуэль 2.000.000", badge: "НОРМАТИВ" },
+          { id: "duel", label: "⚔️ Дуэль Альянсов", badge: "ОБЯЗАТЕЛЬНО" },
           { id: "caravans", label: "🚫 Грабежи и Сервер", badge: "МИР" },
           { id: "shields", label: "🛡️ Щиты & Рейд СБ", badge: "05:00 МСК" },
           { id: "cheese", label: "🧀 Сырная Ловушка" },
@@ -280,7 +277,7 @@ export const AllianceRules: React.FC = () => {
         </div>
       )}
 
-      {/* SECTION 2: Mandatory Alliance Duel (Норматив 2.000.000 очков) */}
+      {/* SECTION 2: Mandatory Alliance Duel */}
       {(activeFilter === "all" || activeFilter === "duel") && (
         <div id="rule-duel" className="rounded-3xl bg-white border-2 border-amber-400 p-6 sm:p-7 shadow-sm space-y-5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
@@ -291,12 +288,12 @@ export const AllianceRules: React.FC = () => {
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[11px] font-mono font-extrabold px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 border border-amber-200">
-                    ПРАВИЛО №2 • НОРМАТИВ ДУЭЛИ
+                    ПРАВИЛО №2 • ДУЭЛЬ АЛЬЯНСОВ
                   </span>
                   <span className="text-xs text-rose-600 font-bold">КИК ЗА ИГНОРИРОВАНИЕ</span>
                 </div>
                 <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-1">
-                  Обязательное Участие в Дуэли Альянсов: Минимум 2.000.000 Очков в День
+                  Обязательное Участие в Дуэли Альянсов по Дням Недели
                 </h2>
               </div>
             </div>
@@ -305,7 +302,7 @@ export const AllianceRules: React.FC = () => {
               onClick={() =>
                 handleCopyRule(
                   "ПРАВИЛО АЛЬЯНСА: ДУЭЛЬ АЛЬЯНСОВ",
-                  "Норматив Дуэли Альянсов: МИНИМУМ 2.000.000 очков в день от каждого игрока! Соблюдайте недельный график сброса ресурсов. Игнорирование дуэли = исключение из Альянса.",
+                  "Обязательное участие в Дуэли Альянсов от каждого игрока! Соблюдайте недельный график сброса ресурсов. Игнорирование дуэли = исключение из Альянса.",
                   "duel_copy"
                 )
               }
@@ -327,7 +324,7 @@ export const AllianceRules: React.FC = () => {
               <div className="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 space-y-2">
                 <div className="font-extrabold text-amber-950 flex items-center gap-1.5">
                   <Award className="w-4 h-4 text-amber-600" />
-                  Как легко закрывать норматив 2 000 000 очков без доната?
+                  Как легко набирать максимум очков без доната?
                 </div>
                 <p className="leading-relaxed">
                   Главный секрет — <strong className="text-amber-950">РЕЖИМ КОПИЛКИ</strong>. Не сливайте ускорители и сундуки когда вздумается! 
@@ -339,17 +336,17 @@ export const AllianceRules: React.FC = () => {
                   <li className="bg-white/80 p-2 rounded-lg border border-amber-200"><strong>СР:</strong> Наука + сундуки Ворона</li>
                   <li className="bg-white/80 p-2 rounded-lg border border-amber-200"><strong>ЧТ:</strong> Прокачка героев + звезды</li>
                   <li className="bg-white/80 p-2 rounded-lg border border-amber-200"><strong>ПТ:</strong> Тренировка войск + Сокол</li>
-                  <li className="bg-white/80 p-2 rounded-lg border border-amber-200"><strong>СБ:</strong> Рейд, билеты выживших, ускоры</li>
+                  <li className="bg-white/80 p-2 rounded-lg border border-amber-200"><strong>СБ:</strong> Рейд серверов</li>
                 </ul>
               </div>
             </div>
 
-            {/* Quota Gauge Card */}
+            {/* Participation Card */}
             <div className="rounded-2xl bg-gradient-to-br from-amber-600 to-amber-800 text-white p-5 flex flex-col justify-between shadow-xs">
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-amber-200">Суточный минимум</span>
-                <div className="text-3xl font-black font-mono tracking-tight mt-1">2 000 000</div>
-                <div className="text-xs text-amber-100 font-medium">очков каждый день от каждого игрока</div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-amber-200">Главное требование</span>
+                <div className="text-xl sm:text-2xl font-black tracking-tight mt-1">Ежедневное участие</div>
+                <div className="text-xs text-amber-100 font-medium mt-1">закрытие суточных этапов от каждого игрока</div>
               </div>
               <div className="border-t border-amber-400/40 pt-3 mt-4 text-[11px] text-amber-100/90 leading-relaxed">
                 ⚠️ Игроки, которые не проявляют активности или системно игнорируют суточные фазы дуэли, подлежат исключению (кику) из альянса.

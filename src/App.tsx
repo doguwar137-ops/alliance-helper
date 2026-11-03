@@ -14,6 +14,7 @@ import {
   Zap,
   Globe,
   ShoppingBag,
+  Swords,
 } from "lucide-react";
 import { Header } from "./components/Header";
 import { TodayDirective } from "./components/TodayDirective";
@@ -25,6 +26,7 @@ import { SanctuaryUpgradeGuide } from "./components/SanctuaryUpgradeGuide";
 import { SurvivalBattleGuide } from "./components/SurvivalBattleGuide";
 import { ServerJumpGuide } from "./components/ServerJumpGuide";
 import { ShopsGuide } from "./components/ShopsGuide";
+import { GearRoadmapGuide } from "./components/GearRoadmapGuide";
 import { GAME_TITLE } from "./data/allianceData";
 
 export default function App() {
@@ -41,6 +43,7 @@ export default function App() {
   const navTabs = [
     { id: "today", label: "Директива Дня", icon: Shield, badge: "СЕГОДНЯ" },
     { id: "rules", label: "Правила Альянса", icon: ShieldAlert, badge: "ВАЖНО" },
+    { id: "gear-roadmap", label: "Снаряжение Героев", icon: Swords, badge: "ГАЙД 1-28" },
     { id: "shops", label: "Гид по Магазинам", icon: ShoppingBag, badge: "ТОП ТРАТ" },
     { id: "server-jump", label: "Переход на Сервер", icon: Globe, badge: "R4 / R5" },
     { id: "survival-sync", label: "Двойные Награды", icon: Zap, badge: "X2 ОЧКИ" },
@@ -104,6 +107,7 @@ export default function App() {
             setSelectedDayIndex={setSelectedDayIndex}
             onOpenRules={() => setCurrentTab("rules")}
             onOpenSanctuary={() => setCurrentTab("sanctuary")}
+            onOpenGearRoadmap={() => setCurrentTab("gear-roadmap")}
           />
         )}
 
@@ -118,6 +122,10 @@ export default function App() {
 
         {currentTab === "rules" && (
           <AllianceRules />
+        )}
+
+        {currentTab === "gear-roadmap" && (
+          <GearRoadmapGuide />
         )}
 
         {currentTab === "shops" && (
@@ -150,7 +158,7 @@ export default function App() {
             Дуэль Альянсов • {GAME_TITLE}
           </span>
           <span className="text-slate-600">
-            Норматив Дуэли: <strong className="text-amber-700">МИНИМУМ 2 000 000 очков в день от каждого</strong> • Взносы в науку по значку 👍
+            Обязательное участие в Дуэли Альянсов • Взносы в науку по значку 👍
           </span>
         </div>
       </footer>

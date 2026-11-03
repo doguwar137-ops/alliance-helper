@@ -15,7 +15,7 @@ import {
   FlaskConical,
   Castle,
 } from "lucide-react";
-import { DUEL_DAYS, DUEL_QUOTA } from "../data/allianceData";
+import { DUEL_DAYS } from "../data/allianceData";
 import { DuelDay } from "../types";
 
 interface TodayDirectiveProps {
@@ -23,6 +23,7 @@ interface TodayDirectiveProps {
   setSelectedDayIndex: (idx: number) => void;
   onOpenRules?: () => void;
   onOpenSanctuary?: () => void;
+  onOpenGearRoadmap?: () => void;
 }
 
 export const TodayDirective: React.FC<TodayDirectiveProps> = ({
@@ -30,6 +31,7 @@ export const TodayDirective: React.FC<TodayDirectiveProps> = ({
   setSelectedDayIndex,
   onOpenRules,
   onOpenSanctuary,
+  onOpenGearRoadmap,
 }) => {
   const [copiedMail, setCopiedMail] = useState(false);
   const [copiedChat, setCopiedChat] = useState(false);
@@ -354,6 +356,37 @@ ${currentDay.phaseName}
           </div>
         )}
 
+        {/* Gear Upgrade Roadmap Banner (Especially relevant on Wednesday & Thursday, or anytime) */}
+        {onOpenGearRoadmap && (
+          <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-[#091326] via-[#111c33] to-[#091326] border border-amber-500/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md text-white">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-400 text-amber-300 shadow-xs">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-amber-500 text-slate-950">
+                    ДОРОЖНАЯ КАРТА СНАРЯЖЕНИЯ
+                  </span>
+                  <span className="text-xs font-bold text-amber-300">
+                    Оптимальный порядок (Шаги 1–28)
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 mt-0.5">
+                  Как правильно прокачивать снаряжение для Марлены, Зои, Даскала, Артура и Харпер до 40 ур. и 5★!
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={onOpenGearRoadmap}
+              className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+            >
+              <span>Открыть карту снаряжения</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+
         {/* Two Column Grid: Allowed vs Forbidden Actions */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
           {/* Allowed Actions */}
@@ -453,9 +486,6 @@ ${currentDay.phaseName}
               <span className="text-xs font-extrabold text-sky-950">ОБЯЗАТЕЛЬНЫЙ РЕГЛАМЕНТ</span>
               <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-rose-100 text-rose-800 border border-rose-200 flex items-center gap-1">
                 👍 Взнос строго по рекомендации
-              </span>
-              <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 border border-amber-200">
-                Дуэль: 2 000 000 очков
               </span>
             </div>
             <p className="text-xs text-slate-700 leading-relaxed max-w-3xl">
