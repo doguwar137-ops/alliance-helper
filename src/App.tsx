@@ -61,11 +61,11 @@ export default function App() {
       />
 
       {/* Navigation Sub-Bar */}
-      <div className="border-b border-slate-200 bg-white/95 sticky top-[61px] z-40 backdrop-blur-md shadow-2xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="border-b border-slate-200 bg-white/95 z-40 backdrop-blur-md shadow-2xs">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6">
           <nav
             id="alliance-nav-tabs"
-            className="flex items-center gap-1 sm:gap-2 overflow-x-auto py-2.5 scrollbar-none"
+            className="flex flex-wrap items-center gap-1.5 sm:gap-2 py-2.5"
           >
             {navTabs.map((tab) => {
               const Icon = tab.icon;
@@ -76,13 +76,13 @@ export default function App() {
                   key={tab.id}
                   id={`nav-btn-${tab.id}`}
                   onClick={() => setCurrentTab(tab.id)}
-                  className={`flex-shrink-0 flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                  className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                     isActive
                       ? "bg-amber-600 text-white shadow-xs scale-[1.01]"
                       : "bg-slate-100/70 hover:bg-slate-200/80 text-slate-600 hover:text-slate-900 border border-slate-200/60"
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-500"}`} />
+                  <Icon className={`w-4 h-4 flex-shrink-0 ${isActive ? "text-white" : "text-slate-500"}`} />
                   <span>{tab.label}</span>
                   {tab.badge && !isActive && (
                     <span className="text-[10px] font-mono px-1.5 py-0.2 rounded-md bg-slate-200 text-slate-700 border border-slate-300">

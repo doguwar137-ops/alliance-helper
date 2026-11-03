@@ -66,7 +66,7 @@ ${currentDay.phaseName}
   return (
     <div id="today-directive-container" className="space-y-6">
       {/* Day Selector Pills */}
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none">
+      <div className="flex flex-wrap items-center gap-1.5 pb-1">
         {DUEL_DAYS.map((day, idx) => {
           const isSelected = selectedDayIndex === idx;
           return (
@@ -74,7 +74,7 @@ ${currentDay.phaseName}
               key={day.id}
               id={`day-tab-${day.id}`}
               onClick={() => setSelectedDayIndex(idx)}
-              className={`flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              className={`px-3 sm:px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
                 isSelected
                   ? "bg-amber-600 text-white shadow-xs scale-[1.01]"
                   : "bg-white hover:bg-slate-100 text-slate-700 hover:text-slate-900 border border-slate-200 shadow-2xs"
