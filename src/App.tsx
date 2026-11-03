@@ -17,6 +17,7 @@ import {
   Swords,
   Crown,
   Sparkles,
+  Gift,
 } from "lucide-react";
 import { Header } from "./components/Header";
 import { TodayDirective } from "./components/TodayDirective";
@@ -31,6 +32,7 @@ import { ShopsGuide } from "./components/ShopsGuide";
 import { GearRoadmapGuide } from "./components/GearRoadmapGuide";
 import { MinistersGuide } from "./components/MinistersGuide";
 import { EraOfRevivalGuide } from "./components/EraOfRevivalGuide";
+import { GiftCodesGuide } from "./components/GiftCodesGuide";
 import { GAME_TITLE } from "./data/allianceData";
 
 export default function App() {
@@ -51,6 +53,7 @@ export default function App() {
     { id: "ministers", label: "Гайд по Министрам", icon: Crown, badge: "+50% БАФФ" },
     { id: "gear-roadmap", label: "Снаряжение Героев", icon: Swords, badge: "ГАЙД 1-28" },
     { id: "shops", label: "Гид по Магазинам", icon: ShoppingBag, badge: "ТОП ТРАТ" },
+    { id: "gift-codes", label: "Активация подарочных кодов", icon: Gift },
     { id: "server-jump", label: "Переход на Сервер", icon: Globe, badge: "R4 / R5" },
     { id: "survival-sync", label: "Двойные Награды", icon: Zap, badge: "X2 ОЧКИ" },
     { id: "sanctuary", label: "Прокачка Святилища", icon: Castle, badge: "1-30 УР" },
@@ -146,6 +149,10 @@ export default function App() {
 
         {currentTab === "shops" && (
           <ShopsGuide />
+        )}
+
+        {currentTab === "gift-codes" && (
+          <GiftCodesGuide />
         )}
 
         {currentTab === "server-jump" && (
