@@ -20,14 +20,7 @@ export const CheeseTrapGuide: React.FC = () => {
 1. БОЕВОЕ БЕЗУМИЕ (+5% к атаке на 15 мин):
 Перед стартом события найдите на карте игрока без альянса («бомжа»), нажмите на его замок и выберите «Разведчик». Статус включится на 15 минут и усилит все отряды!
 
-2. ЗАПУСК ШТУРМА (ТОЛЬКО СЛАБЫЙ ГЕРОЙ):
-При запуске штурма отправляйте ТОЛЬКО 1 слабого героя (синий/фиолетовый 1 ур.) и пару солдат Т1/Т2. 
-Категорически запрещено запускать штурм основным ударным составом — вы забьете лимит вместимости для соклановцев!
-
-3. УЧАСТИЕ В ШТУРМАХ (ТОЛЬКО ОСНОВНОЙ СОСТАВ):
-Присоединяйтесь к штурмам соклановцев ТОЛЬКО своим главным 1-м ударным отрядом с максимальным уроном. Это максимизирует общий урон альянса.
-
-4. ОСТАНОВКА (ПРОВЕРКА ЛИЧНЫХ НАГРАД):
+2. ОСТАНОВКА (ПРОВЕРКА ЛИЧНЫХ НАГРАД):
 Как только забрали максимальные личные награды (значок подарка в интерфейсе события), СРАЗУ прекращайте участие. Не тратьте войска и выносливость впустую.`;
 
   const handleCopy = () => {
@@ -54,7 +47,7 @@ export const CheeseTrapGuide: React.FC = () => {
             </h1>
             <p className="text-sm text-slate-300 leading-relaxed">
               Событие «Сырная ловушка» может проходить в любой день недели независимо от фаз Дуэли. 
-              Соблюдайте четкие правила формирования штурмов для максимизации наград альянса, быстрого уничтожения босса и экономии войск.
+              Соблюдайте правила участия для максимизации наград альянса, быстрого уничтожения босса и экономии войск.
             </p>
           </div>
 
@@ -112,75 +105,26 @@ export const CheeseTrapGuide: React.FC = () => {
         </div>
       </div>
 
-      {/* 3 Core Strategy Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {/* Card 01: Launch Rally with Weak Hero */}
-        <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 space-y-3 shadow-2xs hover:border-amber-300 transition-all flex flex-col justify-between">
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="h-8 w-8 rounded-xl bg-amber-100 text-amber-900 font-mono font-black text-sm flex items-center justify-center border border-amber-200">
-                01
-              </span>
-              <h3 className="text-base sm:text-lg font-extrabold text-slate-900">
-                Запуск штурма: Только слабый герой
-              </h3>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-              При запуске штурма на Сырную ловушку отправляйте <strong>ТОЛЬКО ОДНОГО слабого героя</strong> (синего или фиолетового качества, 1 уровня) с парой солдат (Т1 или Т2).
-            </p>
-          </div>
-          <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-900 flex items-start gap-2.5">
-            <ShieldAlert className="w-4 h-4 text-rose-600 flex-shrink-0 mt-0.5" />
-            <span className="leading-relaxed font-medium">
-              <strong>Категорически запрещено</strong> запускать штурм основным ударным составом! Вы забьете лимит вместимости штурма для соклановцев.
+      {/* Stop After Personal Rewards Cap Card */}
+      <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 space-y-3 shadow-2xs hover:border-blue-300 transition-all">
+        <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <span className="h-8 w-8 rounded-xl bg-blue-100 text-blue-900 font-mono font-black text-sm flex items-center justify-center border border-blue-200">
+              01
             </span>
+            <h3 className="text-base sm:text-lg font-extrabold text-slate-900">
+              Остановка: Проверка личных наград
+            </h3>
           </div>
+          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+            Как только вы забрали максимальные личные награды (проверяется через <strong>значок подарка</strong> в интерфейсе события), <strong className="text-rose-700">СРАЗУ прекращайте участие</strong>.
+          </p>
         </div>
-
-        {/* Card 02: Join Rallies with Main Squad */}
-        <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 space-y-3 shadow-2xs hover:border-emerald-300 transition-all flex flex-col justify-between">
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="h-8 w-8 rounded-xl bg-emerald-100 text-emerald-900 font-mono font-black text-sm flex items-center justify-center border border-emerald-200">
-                02
-              </span>
-              <h3 className="text-base sm:text-lg font-extrabold text-slate-900">
-                Участие в штурмах: Только основной состав
-              </h3>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-              Присоединяйтесь к штурмам соклановцев <strong>ТОЛЬКО своим основным составом</strong> (1-м ударным отрядом) с максимальным уроном.
-            </p>
-          </div>
-          <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 flex items-start gap-2.5">
-            <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-            <span className="leading-relaxed font-medium">
-              Это позволяет нанести <strong>максимальный общий урон</strong> ловушке и забрать высшие командные ранги.
-            </span>
-          </div>
-        </div>
-
-        {/* Card 03: Stop After Personal Rewards Cap */}
-        <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 space-y-3 shadow-2xs hover:border-blue-300 transition-all flex flex-col justify-between">
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="h-8 w-8 rounded-xl bg-blue-100 text-blue-900 font-mono font-black text-sm flex items-center justify-center border border-blue-200">
-                03
-              </span>
-              <h3 className="text-base sm:text-lg font-extrabold text-slate-900">
-                Остановка: Проверка личных наград
-              </h3>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-              Как только вы забрали максимальные личные награды (проверяется через <strong>значок подарка</strong> в интерфейсе события), <strong className="text-rose-700">СРАЗУ прекращайте участие</strong>.
-            </p>
-          </div>
-          <div className="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start gap-2.5">
-            <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-            <span className="leading-relaxed font-medium">
-              Не тратьте войска и выносливость впустую после достижения индивидуального капа наград. Уступайте места соклановцам!
-            </span>
-          </div>
+        <div className="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start gap-2.5">
+          <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+          <span className="leading-relaxed font-medium">
+            Не тратьте войска и выносливость впустую после достижения индивидуального капа наград. Уступайте места соклановцам!
+          </span>
         </div>
       </div>
 
@@ -190,7 +134,7 @@ export const CheeseTrapGuide: React.FC = () => {
           <Info className="w-4 h-4" />
           <span>КРАТКАЯ ПАМЯТКА ДЛЯ ИГРОКА ПЕРЕД СТАРТОМ</span>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
           <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60 space-y-1">
             <span className="text-amber-400 font-mono font-bold block">ШАГ 1</span>
             <span className="text-slate-200 font-semibold block">Разведка на «бомжа»</span>
@@ -198,16 +142,6 @@ export const CheeseTrapGuide: React.FC = () => {
           </div>
           <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60 space-y-1">
             <span className="text-amber-400 font-mono font-bold block">ШАГ 2</span>
-            <span className="text-slate-200 font-semibold block">Запуск: 1 слабый герой</span>
-            <p className="text-slate-400 text-[11px]">1 герой 1 ур. + 1 солдат Т1. Никаких полных отрядов!</p>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60 space-y-1">
-            <span className="text-amber-400 font-mono font-bold block">ШАГ 3</span>
-            <span className="text-slate-200 font-semibold block">Вход: 1-й ударный отряд</span>
-            <p className="text-slate-400 text-[11px]">Входим в штурмы соклановцев своим сильнейшим отрядом.</p>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60 space-y-1">
-            <span className="text-amber-400 font-mono font-bold block">ШАГ 4</span>
             <span className="text-slate-200 font-semibold block">Стоп при капе подарка</span>
             <p className="text-slate-400 text-[11px]">Собрали личные сундуки — сразу прекращаем траты сил.</p>
           </div>

@@ -15,6 +15,8 @@ import {
   Globe,
   ShoppingBag,
   Swords,
+  Crown,
+  Sparkles,
 } from "lucide-react";
 import { Header } from "./components/Header";
 import { TodayDirective } from "./components/TodayDirective";
@@ -27,6 +29,8 @@ import { SurvivalBattleGuide } from "./components/SurvivalBattleGuide";
 import { ServerJumpGuide } from "./components/ServerJumpGuide";
 import { ShopsGuide } from "./components/ShopsGuide";
 import { GearRoadmapGuide } from "./components/GearRoadmapGuide";
+import { MinistersGuide } from "./components/MinistersGuide";
+import { EraOfRevivalGuide } from "./components/EraOfRevivalGuide";
 import { GAME_TITLE } from "./data/allianceData";
 
 export default function App() {
@@ -42,7 +46,9 @@ export default function App() {
 
   const navTabs = [
     { id: "today", label: "Директива Дня", icon: Shield, badge: "СЕГОДНЯ" },
+    { id: "era-revival", label: "Эра Возрождения", icon: Sparkles, badge: "СЕЗОН" },
     { id: "rules", label: "Правила Альянса", icon: ShieldAlert, badge: "ВАЖНО" },
+    { id: "ministers", label: "Гайд по Министрам", icon: Crown, badge: "+50% БАФФ" },
     { id: "gear-roadmap", label: "Снаряжение Героев", icon: Swords, badge: "ГАЙД 1-28" },
     { id: "shops", label: "Гид по Магазинам", icon: ShoppingBag, badge: "ТОП ТРАТ" },
     { id: "server-jump", label: "Переход на Сервер", icon: Globe, badge: "R4 / R5" },
@@ -108,7 +114,13 @@ export default function App() {
             onOpenRules={() => setCurrentTab("rules")}
             onOpenSanctuary={() => setCurrentTab("sanctuary")}
             onOpenGearRoadmap={() => setCurrentTab("gear-roadmap")}
+            onOpenMinisters={() => setCurrentTab("ministers")}
+            onOpenEraRevival={() => setCurrentTab("era-revival")}
           />
+        )}
+
+        {currentTab === "era-revival" && (
+          <EraOfRevivalGuide />
         )}
 
         {currentTab === "schedule" && (
@@ -122,6 +134,10 @@ export default function App() {
 
         {currentTab === "rules" && (
           <AllianceRules />
+        )}
+
+        {currentTab === "ministers" && (
+          <MinistersGuide />
         )}
 
         {currentTab === "gear-roadmap" && (

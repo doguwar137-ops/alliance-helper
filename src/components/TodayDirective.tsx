@@ -14,6 +14,7 @@ import {
   Info,
   FlaskConical,
   Castle,
+  Crown,
 } from "lucide-react";
 import { DUEL_DAYS } from "../data/allianceData";
 import { DuelDay } from "../types";
@@ -24,6 +25,8 @@ interface TodayDirectiveProps {
   onOpenRules?: () => void;
   onOpenSanctuary?: () => void;
   onOpenGearRoadmap?: () => void;
+  onOpenMinisters?: () => void;
+  onOpenEraRevival?: () => void;
 }
 
 export const TodayDirective: React.FC<TodayDirectiveProps> = ({
@@ -32,6 +35,8 @@ export const TodayDirective: React.FC<TodayDirectiveProps> = ({
   onOpenRules,
   onOpenSanctuary,
   onOpenGearRoadmap,
+  onOpenMinisters,
+  onOpenEraRevival,
 }) => {
   const [copiedMail, setCopiedMail] = useState(false);
   const [copiedChat, setCopiedChat] = useState(false);
@@ -356,6 +361,50 @@ ${currentDay.phaseName}
           </div>
         )}
 
+        {/* Ministers Guide Banner (Highlighted especially on Tuesday & Wednesday) */}
+        {onOpenMinisters && (
+          <div
+            className={`mt-4 p-4 rounded-xl border-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs ${
+              currentDay.id === "tuesday" || currentDay.id === "wednesday"
+                ? "bg-gradient-to-r from-amber-100/90 via-amber-50 to-sky-50 border-amber-500"
+                : "bg-gradient-to-r from-slate-50 via-amber-50/40 to-sky-50/40 border-amber-300"
+            }`}
+          >
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-amber-500 text-slate-950 shadow-xs flex-shrink-0">
+                <Crown className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-amber-200 text-amber-950 border border-amber-400">
+                    ГАЙД ПО МИНИСТРАМ (5 МИНУТ НА ЗАПУСК)
+                  </span>
+                  {currentDay.id === "tuesday" && (
+                    <span className="text-xs font-extrabold text-amber-900">
+                      🏗️ Вторник: Министр Строительства (+50% к скорости)
+                    </span>
+                  )}
+                  {currentDay.id === "wednesday" && (
+                    <span className="text-xs font-extrabold text-sky-900">
+                      🔬 Среда: Министр Исследований (+25% к скорости)
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-slate-700 mt-0.5">
+                  Перед запуском долгой стройки или науки обязательно возьмите должность министра! Бафф фиксируется при нажатии кнопки «Улучшить» / «Исследовать».
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={onOpenMinisters}
+              className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+            >
+              <span>Инструкция (4 шага)</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+
         {/* Gear Upgrade Roadmap Banner (Especially relevant on Wednesday & Thursday, or anytime) */}
         {onOpenGearRoadmap && (
           <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-[#091326] via-[#111c33] to-[#091326] border border-amber-500/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md text-white">
@@ -382,6 +431,37 @@ ${currentDay.phaseName}
               className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
             >
               <span>Открыть карту снаряжения</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+
+        {/* Era of Revival Season Guide Banner */}
+        {onOpenEraRevival && (
+          <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-indigo-950 via-[#191636] to-slate-900 border border-indigo-400/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md text-white">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-indigo-500/20 border border-indigo-400 text-indigo-300 shadow-xs">
+                <Flame className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-indigo-400 text-slate-950">
+                    СЕЗОН «ЭРА ВОЗРОЖДЕНИЯ»
+                  </span>
+                  <span className="text-xs font-bold text-amber-300">
+                    Статуя Лорда • Пробуждение Марлены • UR-Клэр • Оружие Даскала
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 mt-0.5">
+                  Полный разбор двухмесячного сезона: какую ветку специализации выбрать («Умелец» или «Командир»), как получать фрагменты эксклюзивного оружия и пробуждения!
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={onOpenEraRevival}
+              className="px-4 py-2 rounded-xl bg-indigo-400 hover:bg-indigo-300 text-slate-950 text-xs font-extrabold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+            >
+              <span>Гайд по Эре</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

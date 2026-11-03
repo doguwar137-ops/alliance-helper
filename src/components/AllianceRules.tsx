@@ -808,25 +808,17 @@ export const AllianceRules: React.FC = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="rounded-2xl bg-amber-50/80 border border-amber-200 p-4 space-y-1.5">
-              <span className="text-xs font-mono font-bold text-amber-800">1. Запуск: Слабый герой</span>
-              <h4 className="text-sm font-bold text-slate-900">1 герой + Т1 солдат</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="rounded-2xl bg-rose-50/80 border border-rose-200 p-4 space-y-1.5">
+              <span className="text-xs font-mono font-bold text-rose-800">1. Боевое безумие (+5% к атаке)</span>
+              <h4 className="text-sm font-bold text-slate-900">Разведка на «бомжа» (15 мин)</h4>
               <p className="text-xs text-slate-700 leading-relaxed">
-                Запускайте штурм ТОЛЬКО 1 слабым героем 1 ур. и парой солдат Т1/Т2. <strong>Запрещено</strong> запускать основным составом — забьете вместимость!
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-emerald-50/80 border border-emerald-200 p-4 space-y-1.5">
-              <span className="text-xs font-mono font-bold text-emerald-800">2. Вход: Основной состав</span>
-              <h4 className="text-sm font-bold text-slate-900">1-й ударный отряд</h4>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Присоединяйтесь к чужим штурмам ТОЛЬКО своим главным 1-м ударным отрядом с максимальным уроном для максимизации командного счета.
+                Перед началом события отправьте разведку на игрока без альянса («бомжа»), чтобы включить Боевое безумие на 15 минут и усилить урон во всех штурмах.
               </p>
             </div>
 
             <div className="rounded-2xl bg-blue-50/80 border border-blue-200 p-4 space-y-1.5">
-              <span className="text-xs font-mono font-bold text-blue-700">3. Остановка: Лимит наград</span>
+              <span className="text-xs font-mono font-bold text-blue-700">2. Остановка: Лимит наград</span>
               <h4 className="text-sm font-bold text-slate-900">Стоп при капе подарка</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Как только значок подарка показывает, что личные награды забраны — <strong className="text-rose-700">СРАЗУ прекращайте участие</strong>.

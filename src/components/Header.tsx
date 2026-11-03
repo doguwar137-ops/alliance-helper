@@ -61,9 +61,6 @@ export const Header: React.FC<HeaderProps> = ({
                   Дуэль Альянсов
                 </span>
               </div>
-              <p className="text-xs text-slate-500 font-medium">
-                Last Asylum: Plague • База знаний и регламенты
-              </p>
             </div>
           </div>
 
