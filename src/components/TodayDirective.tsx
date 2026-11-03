@@ -361,6 +361,40 @@ ${currentDay.phaseName}
           </div>
         )}
 
+        {/* Saturday Special Banner: Shields and Teleportation */}
+        {currentDay.id === "saturday" && (
+          <div className="mt-4 p-5 rounded-2xl bg-gradient-to-br from-rose-950 via-slate-900 to-amber-950 text-white border-2 border-rose-400/60 shadow-md space-y-3.5">
+            <div className="flex items-center gap-3 border-b border-rose-500/20 pb-3">
+              <div className="p-2.5 rounded-xl bg-rose-500/20 border border-rose-400/40 text-rose-300 flex-shrink-0">
+                <ShieldAlert className="w-5 h-5 text-rose-400" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-rose-500/30 text-rose-200 border border-rose-400/40">
+                    ВОЙНА СЕРВЕРОВ (КВК)
+                  </span>
+                  <span className="text-xs font-bold text-amber-300">ПРАВИЛА ВЫЖИВАНИЯ</span>
+                </div>
+                <h3 className="text-base sm:text-lg font-black text-white mt-0.5">
+                  Щиты и телепортация
+                </h3>
+              </div>
+            </div>
+
+            <div className="space-y-2.5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+              <p className="p-3 rounded-xl bg-white/5 border border-white/10">
+                Защитный щит желательно активировать ещё в пятницу вечером. Во время КвК вашу крепость может атаковать не только дуэльный соперник, но и любые другие игроки вражеского королевства.
+              </p>
+              <p className="p-3 rounded-xl bg-rose-500/10 border border-rose-400/30 text-rose-100">
+                Помните: после вашей собственной атаки щит автоматически снимается и включается режим <strong>«боевого безумия»</strong>. Он длится <strong>15 минут</strong>. Если в течение этого времени вы не совершите новых атак, режим спадет и вы снова сможете надеть щит. В этот опасный период лучше сразу телепортироваться в безопасную точку — подальше от места сбора альянса. Возвращаться на территорию своего альянса рекомендуется только после того, как вы снова будете под защитой щита.
+              </p>
+              <p className="p-3 rounded-xl bg-amber-500/10 border border-amber-400/30 text-amber-100">
+                В сумке всегда должен быть запас из щитов и нескольких телепортов. Бесплатного 8-часового щита обычно не хватает, чтобы перекрыть весь опасный период события.
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Ministers Guide Banner (Highlighted especially on Tuesday & Wednesday) */}
         {onOpenMinisters && (
           <div

@@ -310,6 +310,25 @@ ${day.forbiddenActions.map((f) => `- ${f}`).join("\n")}`;
                     </div>
                   </div>
 
+                  {/* Saturday Special Block: Shields and Teleportation */}
+                  {day.id === "saturday" && (
+                    <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-xs space-y-2">
+                      <div className="font-extrabold text-rose-900 flex items-center gap-1.5 text-sm">
+                        <ShieldAlert className="w-4 h-4 text-rose-600 flex-shrink-0" />
+                        <span>Щиты и телепортация</span>
+                      </div>
+                      <p className="text-slate-800 leading-relaxed">
+                        Защитный щит желательно активировать ещё в пятницу вечером. Во время КвК вашу крепость может атаковать не только дуэльный соперник, но и любые другие игроки вражеского королевства.
+                      </p>
+                      <p className="text-slate-800 leading-relaxed">
+                        Помните: после вашей собственной атаки щит автоматически снимается и включается режим <strong>«боевого безумия»</strong>. Он длится 15 минут. Если в течение этого времени вы не совершите новых атак, режим спадет и вы снова сможете надеть щит. В этот опасный период лучше сразу телепортироваться в безопасную точку — подальше от места сбора альянса. Возвращаться на территорию своего альянса рекомендуется только после того, как вы снова будете под защитой щита.
+                      </p>
+                      <p className="text-slate-800 leading-relaxed font-semibold">
+                        В сумке всегда должен быть запас из щитов и нескольких телепортов. Бесплатного 8-часового щита обычно не хватает, чтобы перекрыть весь опасный период события.
+                      </p>
+                    </div>
+                  )}
+
                   {/* Accumulation Mode Block */}
                   {day.accumulation && day.accumulation.length > 0 && (
                     <div className="p-3.5 rounded-xl bg-amber-50/60 border border-amber-200 text-xs">
