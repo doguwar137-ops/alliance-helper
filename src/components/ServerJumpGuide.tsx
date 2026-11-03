@@ -17,14 +17,14 @@ import {
 } from "lucide-react";
 
 export const ServerJumpGuide: React.FC = () => {
-  const [serverNumber, setServerNumber] = useState<string>("387");
+  const [serverNumber, setServerNumber] = useState<string>("300");
   const [coordX, setCoordX] = useState<string>("500");
   const [coordY, setCoordY] = useState<string>("500");
-  const [linkText, setLinkText] = useState<string>("🌍 НАЖМИ ДЛЯ ПЕРЕХОДА НА СЕРВЕР 387 >");
+  const [linkText, setLinkText] = useState<string>("🌍 НАЖМИ ДЛЯ ПЕРЕХОДА НА СЕРВЕР 300 >");
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedFullMemo, setCopiedFullMemo] = useState(false);
 
-  const cleanServer = serverNumber.trim() || "387";
+  const cleanServer = serverNumber.trim() || "300";
   const cleanX = coordX.trim() || "500";
   const cleanY = coordY.trim() || "500";
   const cleanText = linkText.trim() || `S${cleanServer}`;
@@ -38,8 +38,8 @@ export const ServerJumpGuide: React.FC = () => {
   };
 
   const handleServerChange = (newVal: string) => {
-    const oldClean = serverNumber.trim() || "387";
-    const newClean = newVal.trim() || "387";
+    const oldClean = serverNumber.trim() || "300";
+    const newClean = newVal.trim() || "300";
     setServerNumber(newVal);
 
     setLinkText((prev) => {
@@ -214,12 +214,12 @@ ${generatedTag}
                   type="text"
                   value={serverNumber}
                   onChange={(e) => handleServerChange(e.target.value)}
-                  placeholder="387"
+                  placeholder="300"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none font-mono text-sm font-bold text-slate-900"
                 />
                 <span className="absolute right-3 top-2.5 text-xs text-slate-400 font-mono">№</span>
               </div>
-              <span className="text-[11px] text-slate-500 mt-1 block">Например: 387, 345, 412</span>
+              <span className="text-[11px] text-slate-500 mt-1 block">Например: 300, 345, 412</span>
             </div>
 
             <div>
@@ -315,12 +315,12 @@ ${generatedTag}
               </h3>
             </div>
             <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-              В конструкции <code className="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-amber-900 font-bold">500&amp;500&amp;387</code>:
+              В конструкции <code className="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-amber-900 font-bold">500&amp;500&amp;300</code>:
             </p>
             <ul className="text-xs text-slate-600 space-y-1.5 pl-2 border-l-2 border-amber-300">
               <li>• Первое <strong>500</strong> — координата <strong>X</strong>.</li>
               <li>• Второе <strong>500</strong> — координата <strong>Y</strong>.</li>
-              <li>• <strong>387</strong> — номер целевого сервера.</li>
+              <li>• <strong>300</strong> — номер целевого сервера.</li>
             </ul>
           </div>
           <div className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 font-medium">
@@ -340,12 +340,12 @@ ${generatedTag}
               </h3>
             </div>
             <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-              В базовом шаблоне <code className="font-mono bg-slate-100 px-1 py-0.5 rounded text-slate-800">&lt;link=...&gt;S387&lt;/link&gt;</code> текст <strong>S387</strong> — это надпись кнопки.
+              В базовом шаблоне <code className="font-mono bg-slate-100 px-1 py-0.5 rounded text-slate-800">&lt;link=...&gt;S300&lt;/link&gt;</code> текст <strong>S300</strong> — это надпись кнопки.
             </p>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Обязательно замените его на понятный призыв к действию с эмодзи:
               <br />
-              <strong className="text-slate-900">«🌍 НАЖМИ ДЛЯ ПЕРЕХОДА НА СЕРВЕР 387 &gt;»</strong>
+              <strong className="text-slate-900">«🌍 НАЖМИ ДЛЯ ПЕРЕХОДА НА СЕРВЕР 300 &gt;»</strong>
             </p>
           </div>
           <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 font-medium">
@@ -407,7 +407,7 @@ ${generatedTag}
               <div>
                 <strong className="text-slate-900">Координация участников без путаницы:</strong>
                 <p className="text-slate-600 text-xs mt-0.5">
-                  Не нужно объяснять новичкам в чате «как переключить карту на сервер 387». Одна кнопка переносит весь клан.
+                  Не нужно объяснять новичкам в чате «как переключить карту на сервер 300». Одна кнопка переносит весь клан.
                 </p>
               </div>
             </div>
