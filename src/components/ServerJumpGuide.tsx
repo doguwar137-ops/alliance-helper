@@ -37,6 +37,25 @@ export const ServerJumpGuide: React.FC = () => {
     setTimeout(() => setCopiedLink(false), 2500);
   };
 
+  const handleServerChange = (newVal: string) => {
+    const oldClean = serverNumber.trim() || "387";
+    const newClean = newVal.trim() || "387";
+    setServerNumber(newVal);
+
+    setLinkText((prev) => {
+      if (prev.includes(`СЕРВЕР ${oldClean}`)) {
+        return prev.replace(`СЕРВЕР ${oldClean}`, `СЕРВЕР ${newClean}`);
+      }
+      if (prev.includes(`СЕРВЕРА ${oldClean}`)) {
+        return prev.replace(`СЕРВЕРА ${oldClean}`, `СЕРВЕРА ${newClean}`);
+      }
+      if (prev === `S${oldClean}`) {
+        return `S${newClean}`;
+      }
+      return `🌍 НАЖМИ ДЛЯ ПЕРЕХОДА НА СЕРВЕР ${newClean} >`;
+    });
+  };
+
   const handlePresetCastle = () => {
     setCoordX("500");
     setCoordY("500");
@@ -52,7 +71,7 @@ export const ServerJumpGuide: React.FC = () => {
   const handlePresetRecon = () => {
     setCoordX("500");
     setCoordY("500");
-    setLinkText(`🎯 РАЗВЕДКА СЕРВЕРА ${cleanServer} (500:500) >`);
+    setLinkText(`🎯 РАЗВЕДКА СЕРВЕРА ${cleanServer} (${cleanX}:${cleanY}) >`);
   };
 
   const fullOfficerMemo = `🌍 КАК ПЕРЕЙТИ НА ЛЮБОЙ СЕРВЕР | СКРЫТАЯ МЕХАНИКА (ТОЛЬКО R4/R5)
@@ -187,70 +206,72 @@ ${generatedTag}
         </div>
 
         {/* Form Inputs */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1.5">
-              Номер сервера (Server)
-            </label>
-            <div className="relative">
-              <input
-                type="text"
-                value={serverNumber}
-                onChange={(e) => setServerNumber(e.target.value)}
-                placeholder="387"
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none font-mono text-sm font-bold text-slate-900"
-              />
-              <span className="absolute right-3 top-2.5 text-xs text-slate-400 font-mono">№</span>
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                Номер сервера (Server)
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  value={serverNumber}
+                  onChange={(e) => handleServerChange(e.target.value)}
+                  placeholder="387"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none font-mono text-sm font-bold text-slate-900"
+                />
+                <span className="absolute right-3 top-2.5 text-xs text-slate-400 font-mono">№</span>
+              </div>
+              <span className="text-[11px] text-slate-500 mt-1 block">Например: 387, 345, 412</span>
             </div>
-            <span className="text-[11px] text-slate-500 mt-1 block">Например: 387, 345, 412</span>
+
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                Координата X
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  value={coordX}
+                  onChange={(e) => setCoordX(e.target.value)}
+                  placeholder="500"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none font-mono text-sm font-bold text-slate-900"
+                />
+                <span className="absolute right-3 top-2.5 text-xs text-slate-400 font-mono">X</span>
+              </div>
+              <span className="text-[11px] text-slate-500 mt-1 block">500 — центр карты</span>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                Координата Y
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  value={coordY}
+                  onChange={(e) => setCoordY(e.target.value)}
+                  placeholder="500"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none font-mono text-sm font-bold text-slate-900"
+                />
+                <span className="absolute right-3 top-2.5 text-xs text-slate-400 font-mono">Y</span>
+              </div>
+              <span className="text-[11px] text-slate-500 mt-1 block">500 — Королевский замок</span>
+            </div>
           </div>
 
           <div>
             <label className="block text-xs font-bold text-slate-700 mb-1.5">
-              Координата X
-            </label>
-            <div className="relative">
-              <input
-                type="text"
-                value={coordX}
-                onChange={(e) => setCoordX(e.target.value)}
-                placeholder="500"
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none font-mono text-sm font-bold text-slate-900"
-              />
-              <span className="absolute right-3 top-2.5 text-xs text-slate-400 font-mono">X</span>
-            </div>
-            <span className="text-[11px] text-slate-500 mt-1 block">500 — центр карты</span>
-          </div>
-
-          <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1.5">
-              Координата Y
-            </label>
-            <div className="relative">
-              <input
-                type="text"
-                value={coordY}
-                onChange={(e) => setCoordY(e.target.value)}
-                placeholder="500"
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none font-mono text-sm font-bold text-slate-900"
-              />
-              <span className="absolute right-3 top-2.5 text-xs text-slate-400 font-mono">Y</span>
-            </div>
-            <span className="text-[11px] text-slate-500 mt-1 block">500 — Королевский замок</span>
-          </div>
-
-          <div className="sm:col-span-3 lg:col-span-1">
-            <label className="block text-xs font-bold text-slate-700 mb-1.5">
-              Текст кнопки в игре
+              Текст кнопки в игре (обновляется автоматически при смене сервера)
             </label>
             <input
               type="text"
               value={linkText}
               onChange={(e) => setLinkText(e.target.value)}
-              placeholder="🌍 НАЖМИ ДЛЯ ПЕРЕХОДА НА СЕРВЕР >"
+              placeholder={`🌍 НАЖМИ ДЛЯ ПЕРЕХОДА НА СЕРВЕР ${cleanServer} >`}
               className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none text-sm font-semibold text-slate-900"
             />
-            <span className="text-[11px] text-slate-500 mt-1 block">Кликабельный текст ссылки</span>
+            <span className="text-[11px] text-slate-500 mt-1 block">Кликабельный текст ссылки, который увидят игроки в уведомлении альянса</span>
           </div>
         </div>
 
