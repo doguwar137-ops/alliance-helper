@@ -54,7 +54,7 @@ export const ShopsGuide: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <span className="font-mono font-bold text-amber-700 w-4 text-right">1.</span>
                   <span className="w-6 h-6 rounded bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[11px]">🧪</span>
-                  <span className="text-slate-800 font-medium">10 Выносливости</span>
+                  <span className="text-slate-800 font-medium">10 Энергии</span>
                   <span className="text-slate-400">–</span>
                   <span className="text-amber-700 font-extrabold uppercase text-[11px] tracking-wide">ОБЯЗАТЕЛЬНО</span>
                 </div>
@@ -112,7 +112,7 @@ export const ShopsGuide: React.FC = () => {
             </div>
 
             <div className="mt-4 pt-3 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
-              <strong className="text-slate-900">Примечание:</strong> Сначала покупайте выносливость, затем фокусируйтесь на прогрессе UR, потом на ускорениях, и только потом на осколках SSR.
+              <strong className="text-slate-900">Примечание:</strong> Сначала покупайте энергию, затем фокусируйтесь на прогрессе UR, потом на ускорениях, и только потом на осколках SSR.
             </div>
           </div>
 
