@@ -38,6 +38,7 @@ import { MinistersGuide } from "./components/MinistersGuide";
 import { EraOfRevivalGuide } from "./components/EraOfRevivalGuide";
 import { GiftCodesGuide } from "./components/GiftCodesGuide";
 import { BlightBossGuide } from "./components/BlightBossGuide";
+import { HeroSkillsGuide } from "./components/HeroSkillsGuide";
 import { GAME_TITLE } from "./data/allianceData";
 
 export default function App() {
@@ -58,6 +59,7 @@ export default function App() {
     { id: "era-revival", label: "Эра Возрождения", shortLabel: "Эра", icon: Sparkles, badge: "СЕЗОН" },
     { id: "rules", label: "Правила Альянса", shortLabel: "Правила", icon: ShieldAlert, badge: "ВАЖНО" },
     { id: "ministers", label: "Гайд по Министрам", shortLabel: "Министры", icon: Crown, badge: "+50% БАФФ" },
+    { id: "hero-skills", label: "Навыки Героев", shortLabel: "Навыки", icon: Zap, badge: "15 ГЕРОЕВ" },
     { id: "gear-roadmap", label: "Снаряжение Героев", shortLabel: "Снаряжение", icon: Swords, badge: "ГАЙД 1-28" },
     { id: "shops", label: "Гид по Магазинам", shortLabel: "Магазины", icon: ShoppingBag, badge: "ТОП ТРАТ" },
     { id: "gift-codes", label: "Активация подарочных кодов", shortLabel: "Промокоды", icon: Gift },
@@ -157,6 +159,7 @@ export default function App() {
             onOpenMinisters={() => handleSelectTab("ministers")}
             onOpenEraRevival={() => handleSelectTab("era-revival")}
             onOpenBlightBoss={() => handleSelectTab("blight-boss")}
+            onOpenHeroSkills={() => handleSelectTab("hero-skills")}
           />
         )}
 
@@ -176,6 +179,8 @@ export default function App() {
         {currentTab === "rules" && <AllianceRules />}
 
         {currentTab === "ministers" && <MinistersGuide />}
+
+        {currentTab === "hero-skills" && <HeroSkillsGuide />}
 
         {currentTab === "gear-roadmap" && <GearRoadmapGuide />}
 

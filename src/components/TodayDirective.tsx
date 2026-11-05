@@ -28,6 +28,7 @@ interface TodayDirectiveProps {
   onOpenMinisters?: () => void;
   onOpenEraRevival?: () => void;
   onOpenBlightBoss?: () => void;
+  onOpenHeroSkills?: () => void;
 }
 
 export const TodayDirective: React.FC<TodayDirectiveProps> = ({
@@ -39,6 +40,7 @@ export const TodayDirective: React.FC<TodayDirectiveProps> = ({
   onOpenMinisters,
   onOpenEraRevival,
   onOpenBlightBoss,
+  onOpenHeroSkills,
 }) => {
   const [copiedMail, setCopiedMail] = useState(false);
   const [copiedChat, setCopiedChat] = useState(false);
@@ -571,6 +573,37 @@ ${currentDay.phaseName}
               className="w-full sm:w-auto justify-center px-4 py-2.5 sm:py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
             >
               <span>Открыть карту снаряжения</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+
+        {/* Hero Skills Priority Guide Banner */}
+        {onOpenHeroSkills && (
+          <div className="mt-4 p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+            <div className="flex items-start sm:items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-rose-100 border border-rose-200 text-rose-700 flex-shrink-0">
+                <Zap className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-rose-100 text-rose-900 border border-rose-200">
+                    ГАЙД ПО НАВЫКАМ ГЕРОЕВ
+                  </span>
+                  <span className="text-xs font-bold text-slate-700">
+                    Воины • Рейнджеры • Колдуны (Схемы 10/15 → 30)
+                  </span>
+                </div>
+                <p className="text-xs text-slate-700 mt-0.5">
+                  В каком порядке качать способности Марлены, Зои, Красной Леди, Синтии, Ульфрида, Джокера, Николь и других героев без потери значков!
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={onOpenHeroSkills}
+              className="w-full sm:w-auto justify-center px-4 py-2.5 sm:py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+            >
+              <span>Гайд по навыкам</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
