@@ -348,7 +348,7 @@ export const GearRoadmapGuide: React.FC = () => {
 
         {/* Main Step Pill */}
         <div
-          className={`flex-1 flex items-center justify-between gap-2 px-2.5 sm:px-3.5 py-2 rounded-xl border transition-all min-h-[46px] shadow-2xs ${
+          className={`flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-xl border transition-all min-h-[46px] shadow-2xs ${
             isDone
               ? "bg-emerald-50/70 border-emerald-300 text-emerald-800/80 line-through"
               : step.isSpecial
@@ -357,9 +357,9 @@ export const GearRoadmapGuide: React.FC = () => {
           }`}
         >
           {/* Left: Gear Icon + Hero Names */}
-          <div className="flex items-center gap-2.5 min-w-0">
+          <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
             <div
-              className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 border ${
+              className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center flex-shrink-0 border ${
                 step.isSpecial
                   ? "bg-sky-900 border-sky-600"
                   : "bg-slate-900 border-amber-500/80"
@@ -368,9 +368,9 @@ export const GearRoadmapGuide: React.FC = () => {
               <GearSvgIcon type={step.gearType} />
             </div>
 
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <div
-                className={`font-bold text-xs sm:text-sm leading-tight truncate ${
+                className={`font-bold text-[11px] sm:text-sm leading-snug break-words ${
                   step.isSpecial
                     ? "text-sky-950 tracking-wide uppercase font-extrabold"
                     : "text-slate-900"
@@ -387,7 +387,7 @@ export const GearRoadmapGuide: React.FC = () => {
           </div>
 
           {/* Right: Target Level / Star */}
-          <div className="flex-shrink-0 text-right pl-1">
+          <div className="flex-shrink-0 text-left sm:text-right pl-10 sm:pl-1">
             {renderTargetText(step.target)}
           </div>
         </div>
@@ -505,10 +505,10 @@ export const GearRoadmapGuide: React.FC = () => {
       </div>
 
       {/* Main Board in Unified Light Card Style */}
-      <div className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-2xs relative overflow-hidden">
+      <div className="rounded-2xl bg-white border border-slate-200 p-3 sm:p-6 shadow-2xs relative overflow-hidden">
         {/* Header Title */}
-        <div className="text-center mb-6 pb-4 border-b border-slate-200">
-          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight uppercase text-slate-900">
+        <div className="text-center mb-5 pb-3 sm:mb-6 sm:pb-4 border-b border-slate-200">
+          <h2 className="text-lg sm:text-2xl font-extrabold tracking-tight uppercase text-slate-900">
             ДОРОЖНАЯ КАРТА УЛУЧШЕНИЯ СНАРЯЖЕНИЯ
           </h2>
           <p className="text-xs sm:text-sm font-bold text-amber-700 mt-1">
@@ -517,9 +517,9 @@ export const GearRoadmapGuide: React.FC = () => {
         </div>
 
         {/* 3 Columns Grid: Steps 1-9, 10-18, 20-28 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Column 1: 1-9 */}
-          <div className="space-y-2.5 bg-slate-50 border border-slate-200 rounded-2xl p-3.5 sm:p-4">
+          <div className="space-y-2 bg-slate-50 border border-slate-200 rounded-2xl p-2.5 sm:p-4">
             <div className="flex items-center justify-between px-1 pb-2 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-amber-800">
               <span>Этап I • Базовый старт</span>
               <span>Шаги 1 – 9</span>
@@ -528,7 +528,7 @@ export const GearRoadmapGuide: React.FC = () => {
           </div>
 
           {/* Column 2: 10-18 */}
-          <div className="space-y-2.5 bg-slate-50 border border-slate-200 rounded-2xl p-3.5 sm:p-4">
+          <div className="space-y-2 bg-slate-50 border border-slate-200 rounded-2xl p-2.5 sm:p-4">
             <div className="flex items-center justify-between px-1 pb-2 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-sky-800">
               <span>Этап II • Средний рубеж и 1★</span>
               <span>Шаги 10 – 18</span>
@@ -537,7 +537,7 @@ export const GearRoadmapGuide: React.FC = () => {
           </div>
 
           {/* Column 3: 20-28 */}
-          <div className="space-y-2.5 bg-slate-50 border border-slate-200 rounded-2xl p-3.5 sm:p-4">
+          <div className="space-y-2 bg-slate-50 border border-slate-200 rounded-2xl p-2.5 sm:p-4">
             <div className="flex items-center justify-between px-1 pb-2 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-emerald-800">
               <span>Этап III • Выход на 4★ и 5★</span>
               <span>Шаги 20 – 28</span>
