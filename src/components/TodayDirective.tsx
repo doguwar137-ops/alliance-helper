@@ -327,7 +327,7 @@ ${currentDay.phaseName}
               <div className="p-3 rounded-xl bg-white border border-purple-200/80 shadow-2xs flex items-center justify-between gap-2">
                 <div>
                   <span className="font-extrabold text-purple-950 block">
-                    🌙 Команда Б (Пятница)
+                    ⚔️ Команда Б (Пятница)
                   </span>
                   <span className="text-xs text-slate-600">
                     Длительность матча: 30 минут
@@ -416,7 +416,7 @@ ${currentDay.phaseName}
               <div className="p-3 rounded-xl bg-white border border-rose-200 shadow-2xs flex items-center justify-between gap-2">
                 <div>
                   <span className="font-extrabold text-slate-900 block">
-                    🌙 Команда Б
+                    ⚔️ Команда Б
                   </span>
                   <span className="text-xs text-slate-600">
                     Длительность матча: 30 минут
