@@ -281,6 +281,155 @@ ${currentDay.phaseName}
           </div>
         </div>
 
+        {/* Elixir Race Banner (Mon–Wed: Registration, Thu: Matchmaking/Reminder, Fri: Battle Day) */}
+        {(currentDay.id === "monday" ||
+          currentDay.id === "tuesday" ||
+          currentDay.id === "wednesday") && (
+          <div className="mt-4 p-4 sm:p-5 rounded-xl bg-purple-50/80 border border-purple-200 text-slate-900 shadow-2xs space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-purple-200/80 pb-3">
+              <div className="flex items-start sm:items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-purple-100 border border-purple-200 text-purple-700 flex-shrink-0">
+                  <FlaskConical className="w-5 h-5 text-purple-600" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-purple-200/80 text-purple-900 border border-purple-300">
+                      ГОНКА ЗА ЭЛИКСИРОМ • РЕГИСТРАЦИЯ (ПН — СР)
+                    </span>
+                    {currentDay.id === "wednesday" && (
+                      <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-rose-500 text-white animate-pulse">
+                        ПОСЛЕДНИЙ ДЕНЬ ЗАПИСИ!
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-base sm:text-lg font-extrabold text-slate-900 mt-1">
+                    Обязательно зарегистрируйтесь в удобное время в Команду А или Б!
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm">
+              <div className="p-3 rounded-xl bg-white border border-purple-200/80 shadow-2xs flex items-center justify-between gap-2">
+                <div>
+                  <span className="font-extrabold text-purple-950 block">
+                    ⚔️ Команда А (Пятница)
+                  </span>
+                  <span className="text-xs text-slate-600">
+                    Длительность матча: 30 минут
+                  </span>
+                </div>
+                <span className="px-2.5 py-1 rounded-lg bg-purple-100 border border-purple-300 text-purple-900 font-mono font-extrabold text-xs sm:text-sm whitespace-nowrap">
+                  14:00 МСК
+                </span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-white border border-purple-200/80 shadow-2xs flex items-center justify-between gap-2">
+                <div>
+                  <span className="font-extrabold text-purple-950 block">
+                    🌙 Команда Б (Пятница)
+                  </span>
+                  <span className="text-xs text-slate-600">
+                    Длительность матча: 30 минут
+                  </span>
+                </div>
+                <span className="px-2.5 py-1 rounded-lg bg-purple-100 border border-purple-300 text-purple-900 font-mono font-extrabold text-xs sm:text-sm whitespace-nowrap">
+                  23:00 МСК
+                </span>
+              </div>
+            </div>
+
+            <div className="p-3 rounded-xl bg-amber-50 border border-amber-300 text-amber-950 text-xs sm:text-sm leading-relaxed flex items-start gap-2">
+              <span className="font-extrabold text-amber-700 shrink-0">💬 Важно:</span>
+              <span>
+                Регистрация открыта <strong>с понедельника по среду</strong> (в четверг — подбор соперника, в пятницу — битва).{" "}
+                <strong>Если вы сами не можете зарегистрироваться — напишите игроку R4, чтобы вас зарегистрировали!</strong>
+              </span>
+            </div>
+          </div>
+        )}
+
+        {currentDay.id === "thursday" && (
+          <div className="mt-4 p-4 sm:p-5 rounded-xl bg-indigo-50/80 border border-indigo-200 text-slate-900 shadow-2xs space-y-3">
+            <div className="flex items-start sm:items-center gap-3 border-b border-indigo-200/80 pb-3">
+              <div className="p-2.5 rounded-xl bg-indigo-100 border border-indigo-200 text-indigo-700 flex-shrink-0">
+                <FlaskConical className="w-5 h-5 text-indigo-600" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-indigo-200/80 text-indigo-900 border border-indigo-300">
+                    ГОНКА ЗА ЭЛИКСИРОМ • ПОДБОР СОПЕРНИКА
+                  </span>
+                  <span className="text-xs font-bold text-indigo-800">
+                    НАПОМИНАНИЕ НА ЗАВТРА
+                  </span>
+                </div>
+                <h3 className="text-base sm:text-lg font-extrabold text-slate-900 mt-1">
+                  Сегодня идет подбор соперника — завтра в пятницу Битва!
+                </h3>
+              </div>
+            </div>
+
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              Не забудьте запланировать время на завтрашнюю пятницу! Длительность матча составляет <strong>30 минут</strong>:
+              {" "}<strong>Команда А — в 14:00 по МСК</strong>, <strong>Команда Б — в 23:00 по МСК</strong>.
+            </p>
+          </div>
+        )}
+
+        {currentDay.id === "friday" && (
+          <div className="mt-4 p-4 sm:p-5 rounded-xl bg-rose-50/90 border border-rose-300 text-slate-900 shadow-2xs space-y-3">
+            <div className="flex items-start sm:items-center gap-3 border-b border-rose-200 pb-3">
+              <div className="p-2.5 rounded-xl bg-rose-200 border border-rose-300 text-rose-800 flex-shrink-0">
+                <FlaskConical className="w-5 h-5 text-rose-700" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 rounded bg-rose-600 text-white">
+                    СЕГОДНЯ БИТВА • ГОНКА ЗА ЭЛИКСИРОМ
+                  </span>
+                  <span className="text-xs font-bold text-rose-800">
+                    МАТЧ ДЛИТСЯ 30 МИНУТ
+                  </span>
+                </div>
+                <h3 className="text-base sm:text-lg font-extrabold text-slate-900 mt-1">
+                  Сегодня проходит Гонка за эликсиром — всем участникам быть в сети!
+                </h3>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm">
+              <div className="p-3 rounded-xl bg-white border border-rose-200 shadow-2xs flex items-center justify-between gap-2">
+                <div>
+                  <span className="font-extrabold text-slate-900 block">
+                    ⚔️ Команда А
+                  </span>
+                  <span className="text-xs text-slate-600">
+                    Длительность матча: 30 минут
+                  </span>
+                </div>
+                <span className="px-2.5 py-1 rounded-lg bg-rose-100 border border-rose-300 text-rose-900 font-mono font-extrabold text-xs sm:text-sm whitespace-nowrap">
+                  14:00 по МСК
+                </span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-white border border-rose-200 shadow-2xs flex items-center justify-between gap-2">
+                <div>
+                  <span className="font-extrabold text-slate-900 block">
+                    🌙 Команда Б
+                  </span>
+                  <span className="text-xs text-slate-600">
+                    Длительность матча: 30 минут
+                  </span>
+                </div>
+                <span className="px-2.5 py-1 rounded-lg bg-rose-100 border border-rose-300 text-rose-900 font-mono font-extrabold text-xs sm:text-sm whitespace-nowrap">
+                  23:00 по МСК
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Monday Special Banner: Epigraphs and Raven Upgrade System */}
         {currentDay.id === "monday" && (
           <div className="mt-4 p-5 rounded-xl bg-amber-50/70 border border-amber-200 text-slate-900 shadow-2xs space-y-4">
