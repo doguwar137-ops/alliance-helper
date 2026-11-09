@@ -36,7 +36,8 @@ export const AllianceRules: React.FC = () => {
 4. КАРАВАНЫ И СЕКРЕТКИ: грабим ТОЛЬКО чужие серверы! Обязательно галочка «Запретить караваны на этом сервере».
 5. МИР НА СЕРВЕРЕ: сжигать соседей нашего сервера КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО, даже если они вас ограбили!
 6. ЩИТЫ МИРА И БОЕВОЕ БЕЗУМИЕ: всю неделю (с вс по пт) щиты НЕ тратим — копим на войну! В субботу (с 05:00 сб до 05:00 вс МСК) рейд врагов: щит ОБЯЗАТЕЛЕН на 24ч! Ставьте щит ЗАРАНЕЕ, так как любое военное действие (даже разведка) включает Боевое безумие и запрещает ставить щит 15 минут! Если щита нет — снимайте войска со стен!
-7. ОБОРОНА ГОРОДА И «ОСАДА НЕЖИТИ»: Перед стартом события ОБЯЗАТЕЛЬНО верните ВСЕ отряды домой (со сбора ресурсов и со штурмов)! В момент начала все войска должны быть на базе. В меню База -> «Подкрепление» -> «Гарнизон» -> «Настроить оборону города» СТАВИМ галочки ✅ «Присоединиться к обороне», чтобы защищать базу и отбивать волны монстров. Если крепите союзников — обязательно обновляйте раненые войска (домой на лечение -> обратно в креп)! В обычное время и перед субботней войной галочки ⬜ ОБЯЗАТЕЛЬНО СНИМАЕМ, чтобы враги не перебили всю армию!`;
+7. ОБОРОНА ГОРОДА И «ОСАДА НЕЖИТИ»: Перед стартом события ОБЯЗАТЕЛЬНО верните ВСЕ отряды домой (со сбора ресурсов и со штурмов)! В момент начала все войска должны быть на базе. В меню База -> «Подкрепление» -> «Гарнизон» -> «Настроить оборону города» СТАВИМ галочки ✅ «Присоединиться к обороне», чтобы защищать базу и отбивать волны монстров. Если крепите союзников — обязательно обновляйте раненые войска (домой на лечение -> обратно в креп)! В обычное время и перед субботней войной галочки ⬜ ОБЯЗАТЕЛЬНО СНИМАЕМ, чтобы враги не перебили всю армию!
+8. ГОНКА ЗА ЭЛИКСИРОМ (КАЖДУЮ ПЯТНИЦУ): Регистрация открыта с понедельника по среду (в четверг — подбор соперника, в пятницу — битва). Обязательно зарегистрируйтесь в удобное время: Команда А (14:00 по МСК) или Команда Б (23:00 по МСК), длительность матча 30 минут. Если вы сами не можете зарегистрироваться — напишите игроку R4, он вам подскажет как это сделать.`;
 
   const handleCopyNewbieMemo = () => {
     navigator.clipboard.writeText(memoText);
@@ -139,6 +140,7 @@ export const AllianceRules: React.FC = () => {
       <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
         {[
           { id: "all", label: "Все Правила" },
+          { id: "elixir", label: "🧪 Гонка за Эликсиром", badge: "ПТ 14:00 / 23:00" },
           { id: "garrison", label: "🛡️ Оборона и Галочки", badge: "ВАЖНО" },
           { id: "falcon", label: "🦅 Соколиная Башня (🔴 Кружок)", badge: "ВАЖНО" },
           { id: "donations", label: "🧪 Взносы в науку (👍)", badge: "ОБЯЗАТЕЛЬНО" },
@@ -964,6 +966,137 @@ export const AllianceRules: React.FC = () => {
                 <div className="font-extrabold text-amber-700">ВС (День 7)</div>
                 <div className="text-[10px] mt-0.5 text-slate-600">Выполняем до 🔴, копим на ПН 🔒</div>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* SECTION 7: Elixir Race (Гонка за эликсиром) */}
+      {(activeFilter === "all" || activeFilter === "elixir") && (
+        <div id="rule-elixir" className="rounded-3xl bg-white border-2 border-purple-400 p-6 sm:p-7 shadow-sm space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+            <div className="flex items-center gap-3">
+              <div className="p-3 rounded-2xl bg-purple-100 text-purple-700">
+                <Timer className="w-6 h-6 text-purple-600" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[11px] font-mono font-extrabold px-2 py-0.5 rounded-md bg-purple-100 text-purple-800 border border-purple-300">
+                    ПРАВИЛО №7 • ГОНКА ЗА ЭЛИКСИРОМ
+                  </span>
+                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-rose-500 text-white font-mono">
+                    ОБЯЗАТЕЛЬНАЯ РЕГИСТРАЦИЯ (ПН — СР)
+                  </span>
+                </div>
+                <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-1">
+                  Гонка за Эликсиром: Расписание, Регистрация и Время Битвы
+                </h2>
+              </div>
+            </div>
+
+            <button
+              onClick={() =>
+                handleCopyRule(
+                  "ПРАВИЛО АЛЬЯНСА: ГОНКА ЗА ЭЛИКСИРОМ",
+                  "• Регистрация открыта с понедельника по среду (в четверг — подбор соперника, в пятницу — битва). Обязательно зарегистрируйтесь в удобное время в Команду А (14:00 МСК) или Команду Б (23:00 МСК). Если вы сами не можете зарегистрироваться — напишите игроку R4, он вам подскажет как это сделать.\n• Подбор соперника: в четверг.\n• Битва: по пятницам — Команда А в 14:00 по МСК, Команда Б в 23:00 по МСК. Длительность матча составляет 30 минут!",
+                  "elixir_copy"
+                )
+              }
+              className="self-start sm:self-center px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+            >
+              {copiedRuleId === "elixir_copy" ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
+              <span>Скопировать правило</span>
+            </button>
+          </div>
+
+          {/* 3 Stages of the Event */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-4 rounded-2xl bg-purple-50/70 border border-purple-200 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono font-extrabold text-purple-800 bg-purple-200/80 px-2 py-0.5 rounded">
+                  ЭТАП 1 • ПН — СР
+                </span>
+                <span className="text-[11px] font-bold text-rose-600">ОБЯЗАТЕЛЬНО</span>
+              </div>
+              <h4 className="text-sm font-extrabold text-slate-900">
+                Регистрация (Понедельник — Среда)
+              </h4>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                С понедельника по среду каждый игрок должен зарегистрироваться на гонку в удобное для себя время — в <strong>Команду А</strong> или <strong>Команду Б</strong>.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono font-extrabold text-indigo-800 bg-indigo-200/80 px-2 py-0.5 rounded">
+                  ЭТАП 2 • ЧЕТВЕРГ
+                </span>
+                <span className="text-[11px] font-bold text-indigo-700">ПОДГОТОВКА</span>
+              </div>
+              <h4 className="text-sm font-extrabold text-slate-900">
+                Подбор соперника (Четверг)
+              </h4>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                В четверг регистрация закрыта — система проводит подбор соперника для обеих команд на пятничный матч.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-rose-50/80 border border-rose-200 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono font-extrabold text-rose-800 bg-rose-200/80 px-2 py-0.5 rounded">
+                  ЭТАП 3 • ПЯТНИЦА
+                </span>
+                <span className="text-[11px] font-bold text-rose-700">30 МИНУТ</span>
+              </div>
+              <h4 className="text-sm font-extrabold text-slate-900">
+                Битва (Пятница: 14:00 и 23:00 МСК)
+              </h4>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                По пятницам проходит сама битва: <strong>Команда А в 14:00 по МСК</strong>, <strong>Команда Б в 23:00 по МСК</strong>. Длительность матча — <strong>30 минут</strong>.
+              </p>
+            </div>
+          </div>
+
+          {/* Teams A and B Schedule Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+              <div>
+                <div className="text-sm sm:text-base font-extrabold text-slate-900">
+                  ⚔️ Команда А (Дневная группа)
+                </div>
+                <p className="text-xs text-slate-600 mt-0.5">
+                  Пятница • Длительность матча составляет 30 минут
+                </p>
+              </div>
+              <span className="px-3 py-1.5 rounded-xl bg-purple-100 border border-purple-300 text-purple-900 font-mono font-extrabold text-xs sm:text-sm whitespace-nowrap">
+                14:00 по МСК
+              </span>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+              <div>
+                <div className="text-sm sm:text-base font-extrabold text-slate-900">
+                  ⚔️ Команда Б (Вечерняя группа)
+                </div>
+                <p className="text-xs text-slate-600 mt-0.5">
+                  Пятница • Длительность матча составляет 30 минут
+                </p>
+              </div>
+              <span className="px-3 py-1.5 rounded-xl bg-purple-100 border border-purple-300 text-purple-900 font-mono font-extrabold text-xs sm:text-sm whitespace-nowrap">
+                23:00 по МСК
+              </span>
+            </div>
+          </div>
+
+          {/* Help from R4 Callout */}
+          <div className="p-4 rounded-2xl bg-amber-50 border-2 border-amber-300 text-amber-950 flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div className="text-xs sm:text-sm leading-relaxed">
+              <strong className="text-amber-950 block mb-0.5">
+                Что делать, если не получается зарегистрироваться самостоятельно?
+              </strong>
+              Регистрация открыта <strong>с понедельника по среду</strong> (в четверг — подбор соперника, в пятницу — битва).{" "}
+              <strong>Если вы сами не можете зарегистрироваться — напишите игроку R4, он вам подскажет как это сделать.</strong>
             </div>
           </div>
         </div>
